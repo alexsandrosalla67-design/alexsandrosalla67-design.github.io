@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Salla Energy - Engenharia Elétrica | Curitiba e Região</title>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18147341908"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18147341908');
+</script>
 <meta name="description" content="Eletricista em Curitiba e região. Energia solar, instalações elétricas, termografia, SPDA, laudos elétricos. Atendimento residencial e empresarial. Ligue agora!">
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -912,12 +921,12 @@
           <div class="hero-stat-label">Anos de experiência</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-num">500+</div>
-          <div class="hero-stat-label">Projetos realizados</div>
-        </div>
-        <div class="hero-stat">
           <div class="hero-stat-num">100%</div>
           <div class="hero-stat-label">Com ART e laudo</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">CREA-PR</div>
+          <div class="hero-stat-label">Eng. registrado</div>
         </div>
       </div>
     </div>
@@ -1058,16 +1067,16 @@
       <div class="diferencial-label">Anos de experiência</div>
     </div>
     <div class="diferencial-item">
-      <div class="diferencial-num">500+</div>
-      <div class="diferencial-label">Projetos concluídos</div>
-    </div>
-    <div class="diferencial-item">
       <div class="diferencial-num">100%</div>
       <div class="diferencial-label">Serviços com ART</div>
     </div>
     <div class="diferencial-item">
       <div class="diferencial-num">24h</div>
       <div class="diferencial-label">Prazo de resposta</div>
+    </div>
+    <div class="diferencial-item">
+      <div class="diferencial-num">CREA-PR</div>
+      <div class="diferencial-label">Eng. registrado</div>
     </div>
   </div>
 </section>
@@ -1301,8 +1310,39 @@ function enviarFormulario(e) {
   const servico = form.querySelector('select').value;
   const msg = form.querySelector('textarea') ? form.querySelector('textarea').value : '';
   const texto = encodeURIComponent(`Olá! Meu nome é ${nome}.\nTelefone: ${tel}\nServiço: ${servico}\n${msg ? 'Mensagem: ' + msg : ''}`);
+
+  // Rastrear conversão de formulário no Google Ads
+  gtag('event', 'conversion', {
+    'send_to': 'AW-18147341908',
+    'event_category': 'lead',
+    'event_label': 'formulario_whatsapp'
+  });
+
   window.open(`https://wa.me/5541987774160?text=${texto}`, '_blank');
 }
+
+// Rastrear cliques diretos no WhatsApp e telefone
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18147341908',
+        'event_category': 'lead',
+        'event_label': 'clique_whatsapp'
+      });
+    });
+  });
+
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18147341908',
+        'event_category': 'lead',
+        'event_label': 'clique_telefone'
+      });
+    });
+  });
+});
 </script>
 
 </body>
