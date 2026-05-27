@@ -224,7 +224,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:'Barlow',
           <div class="tot-row grand" style="color:var(--texto);font-size:16px;"><span>Total</span><span id="pv-total" style="color:var(--azul)"></span></div>
         </div>
         <div style="margin-top:14px;font-size:11px;color:var(--muted);text-align:center;border-top:1px solid var(--borda);padding-top:12px;">
-          Eng. Alexsandro Salla — CREA-PR<br>(41) 98777-4160 • sallaenergy.github.io
+          Eng. Alexsandro Salla — CREA-PR 212335/D<br>(41) 98777-4160 • sallaenergy.github.io
         </div>
       </div>
     </div>
@@ -512,7 +512,7 @@ function gerarPDF(){
   doc.text('TOTAL GERAL:',tx,y+1);doc.text('R$ '+fmt(total),W-mg,y+1,{align:'right'});
   y+=18;
   doc.setTextColor(150,150,150);doc.setFont('helvetica','normal');doc.setFontSize(8);
-  doc.text('Eng. Alexsandro Salla — CREA-PR  •  (41) 98777-4160  •  sallaenergy.github.io',W/2,y,{align:'center'});
+  doc.text('Eng. Alexsandro Salla — CREA-PR 212335/D  •  (41) 98777-4160  •  sallaenergy.github.io',W/2,y,{align:'center'});
   doc.save(numOrc+'.pdf');
 }
 
