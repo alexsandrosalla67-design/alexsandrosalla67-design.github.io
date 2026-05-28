@@ -213,6 +213,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);font-family:'Barlow',
           <div class="prev-section"><div class="prev-label">Cliente</div><div class="prev-val" id="pv-nome"></div><div class="prev-sub" id="pv-tel"></div><div class="prev-sub" id="pv-end"></div></div>
           <div class="prev-section"><div class="prev-label">Serviço</div><div class="prev-val" id="pv-serv"></div><div class="prev-sub" id="pv-valid"></div></div>
         </div>
+        <div id="pv-obs-wrap" style="display:none;background:#f8f9fb;border-left:3px solid var(--azul3);border-radius:0 8px 8px 0;padding:8px 12px;margin-bottom:12px;font-size:13px;color:var(--texto);"><span style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:2px;">Observações</span><span id="pv-obs"></span></div>
         <table class="prev-table">
           <thead><tr><th>Descrição</th><th>Qtd</th><th>Unit.</th><th>Total</th></tr></thead>
           <tbody id="pv-itens"></tbody>
@@ -431,6 +432,9 @@ function gerarPreview(){
   document.getElementById('pv-nome').textContent=document.getElementById('cli-nome').value||'—';
   document.getElementById('pv-tel').textContent=document.getElementById('cli-tel').value;
   document.getElementById('pv-end').textContent=document.getElementById('cli-end').value;
+  const obsVal=document.getElementById('cli-obs').value;
+  const obsWrap=document.getElementById('pv-obs-wrap');
+  if(obsVal){document.getElementById('pv-obs').textContent=obsVal;obsWrap.style.display='block';}else{obsWrap.style.display='none';}
   document.getElementById('pv-serv').textContent=servicoSel?servicoSel.nome:'—';
   document.getElementById('pv-valid').textContent='Emitido: '+d.toLocaleDateString('pt-BR');
   const tb=document.getElementById('pv-itens');tb.innerHTML='';
@@ -488,12 +492,14 @@ function gerarPDF(){
   doc.text('DESCRIÇÃO',mg,y);doc.text('QTD',128,y);doc.text('UN',140,y);doc.text('V.UNIT.',152,y);doc.text('TOTAL',W-mg,y,{align:'right'});
   y+=4;doc.setFont('helvetica','normal');doc.setFontSize(9);doc.setTextColor(30,30,30);
   itens.forEach(it=>{
+    const descLines=doc.splitTextToSize(it.desc,118);
+    const rowH=Math.max(7,descLines.length*4+3);
     doc.line(mg-2,y-1,W-mg+2,y-1);
-    doc.text(it.desc.substring(0,48),mg,y+3);
+    doc.text(descLines,mg,y+3);
     doc.text(String(it.qtd),128,y+3);doc.text(it.un,140,y+3);
     doc.text('R$ '+fmt(it.val),152,y+3);
     doc.text('R$ '+fmt(it.qtd*it.val),W-mg,y+3,{align:'right'});
-    y+=7;
+    y+=rowH;
   });
   y+=6;
   const mat=itens.filter(x=>!x.mdo).reduce((a,x)=>a+x.qtd*x.val,0);
