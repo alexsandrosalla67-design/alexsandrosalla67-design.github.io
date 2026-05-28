@@ -481,12 +481,24 @@ function gerarPDF(){
   doc.text(document.getElementById('cli-nome').value||'—',mg,y);
   doc.text(servicoSel?servicoSel.nome:'—',W/2,y);y+=5;
   doc.setFontSize(9);doc.setTextColor(100,100,100);
-  doc.text(document.getElementById('cli-tel').value,mg,y);y+=4;
-  doc.text(document.getElementById('cli-email').value,mg,y);y+=4;
-  doc.text(document.getElementById('cli-end').value,mg,y);
-  const obs=document.getElementById('cli-obs').value;
-  if(obs){y+=4;doc.text(obs,mg,y,{maxWidth:W/2-mg});}
-  y+=10;
+  const telVal=document.getElementById('cli-tel').value;
+  const emailVal=document.getElementById('cli-email').value;
+  const endVal=document.getElementById('cli-end').value;
+  const obsVal2=document.getElementById('cli-obs').value;
+  const maxW=W/2-mg-4;
+  if(telVal){doc.text(telVal,mg,y);y+=4;}
+  if(emailVal){doc.text(emailVal,mg,y);y+=4;}
+  if(endVal){
+    const endLines=doc.splitTextToSize(endVal,maxW);
+    doc.text(endLines,mg,y);
+    y+=endLines.length*4;
+  }
+  if(obsVal2){
+    const obsLines=doc.splitTextToSize(obsVal2,maxW);
+    doc.text(obsLines,mg,y);
+    y+=obsLines.length*4;
+  }
+  y+=8;
   doc.setFillColor(240,242,248);doc.rect(mg-2,y-4,W-2*mg+4,7,'F');
   doc.setFontSize(8);doc.setFont('helvetica','bold');doc.setTextColor(60,60,60);
   doc.text('DESCRIÇÃO',mg,y);doc.text('QTD',128,y);doc.text('UN',140,y);doc.text('V.UNIT.',152,y);doc.text('TOTAL',W-mg,y,{align:'right'});
