@@ -41,7 +41,6 @@
     line-height: 1.6;
   }
 
-  /* HEADER */
   header {
     background: var(--azul);
     padding: 0 2rem;
@@ -130,7 +129,6 @@
     text-decoration: none;
   }
 
-  /* HERO */
   .hero {
     background: linear-gradient(135deg, var(--azul) 0%, var(--azul-medio) 60%, var(--azul-claro) 100%);
     padding: 80px 2rem;
@@ -275,7 +273,6 @@
     font-weight: 500;
   }
 
-  /* CARD CONTATO HERO */
   .hero-contact-card {
     background: var(--branco);
     border-radius: 16px;
@@ -296,9 +293,7 @@
     margin-bottom: 24px;
   }
 
-  .form-group {
-    margin-bottom: 16px;
-  }
+  .form-group { margin-bottom: 16px; }
 
   .form-group label {
     display: block;
@@ -325,9 +320,7 @@
 
   .form-group input:focus,
   .form-group select:focus,
-  .form-group textarea:focus {
-    border-color: var(--azul-claro);
-  }
+  .form-group textarea:focus { border-color: var(--azul-claro); }
 
   .form-group textarea { height: 80px; resize: none; }
 
@@ -355,7 +348,6 @@
     margin-top: 12px;
   }
 
-  /* TRUST BAR */
   .trust-bar {
     background: var(--cinza);
     padding: 20px 2rem;
@@ -381,12 +373,7 @@
     color: var(--azul);
   }
 
-  .trust-item svg { color: var(--amarelo); }
-
-  /* SERVIÇOS */
-  .section {
-    padding: 80px 2rem;
-  }
+  .section { padding: 80px 2rem; }
 
   .section-header {
     text-align: center;
@@ -416,10 +403,7 @@
     margin-bottom: 16px;
   }
 
-  .section-desc {
-    color: var(--texto-muted);
-    font-size: 16px;
-  }
+  .section-desc { color: var(--texto-muted); font-size: 16px; }
 
   .servicos-grid {
     max-width: 1200px;
@@ -458,23 +442,10 @@
   }
 
   .servico-icon svg { width: 28px; height: 28px; color: var(--azul); }
+  .servico-card h3 { font-size: 18px; font-weight: 700; color: var(--azul); margin-bottom: 10px; }
+  .servico-card p { font-size: 14px; color: var(--texto-muted); line-height: 1.6; }
 
-  .servico-card h3 {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--azul);
-    margin-bottom: 10px;
-  }
-
-  .servico-card p {
-    font-size: 14px;
-    color: var(--texto-muted);
-    line-height: 1.6;
-  }
-
-  /* DIFERENCIAIS */
   .diferenciais { background: var(--azul); }
-
   .diferenciais .section-label { background: rgba(245,166,35,0.2); color: var(--amarelo); }
   .diferenciais h2 { color: var(--branco); }
   .diferenciais .section-desc { color: rgba(255,255,255,0.6); }
@@ -490,11 +461,7 @@
     overflow: hidden;
   }
 
-  .diferencial-item {
-    background: rgba(255,255,255,0.04);
-    padding: 32px 24px;
-    text-align: center;
-  }
+  .diferencial-item { background: rgba(255,255,255,0.04); padding: 32px 24px; text-align: center; }
 
   .diferencial-num {
     font-family: 'Barlow Condensed', sans-serif;
@@ -505,13 +472,8 @@
     margin-bottom: 8px;
   }
 
-  .diferencial-label {
-    font-size: 14px;
-    color: rgba(255,255,255,0.7);
-    font-weight: 500;
-  }
+  .diferencial-label { font-size: 14px; color: rgba(255,255,255,0.7); font-weight: 500; }
 
-  /* SOBRE */
   .sobre-inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -530,325 +492,112 @@
     line-height: 1.1;
   }
 
-  .sobre-content p {
-    color: var(--texto-muted);
-    font-size: 16px;
-    margin-bottom: 16px;
-    line-height: 1.7;
-  }
+  .sobre-content p { color: var(--texto-muted); font-size: 16px; margin-bottom: 16px; line-height: 1.7; }
 
-  .sobre-lista {
-    list-style: none;
-    margin-top: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
+  .sobre-lista { list-style: none; margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
 
-  .sobre-lista li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--texto);
-  }
+  .sobre-lista li { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 500; color: var(--texto); }
 
   .check-icon {
-    width: 24px;
-    height: 24px;
+    width: 24px; height: 24px;
     background: rgba(13,43,94,0.08);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
   }
 
   .check-icon svg { width: 14px; height: 14px; color: var(--azul); }
 
-  .sobre-visual {
-    background: var(--cinza);
-    border-radius: 20px;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
+  .sobre-visual { background: var(--cinza); border-radius: 20px; padding: 40px; display: flex; flex-direction: column; gap: 16px; }
 
   .sobre-card-mini {
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
+    background: white; border-radius: 12px; padding: 20px;
+    display: flex; align-items: center; gap: 16px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   }
 
-  .sobre-card-mini-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
+  .sobre-card-mini-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .sobre-card-mini-icon.amarelo { background: rgba(245,166,35,0.15); }
   .sobre-card-mini-icon.azul { background: rgba(13,43,94,0.1); }
   .sobre-card-mini-icon svg { width: 22px; height: 22px; }
   .sobre-card-mini-icon.amarelo svg { color: var(--amarelo-dark); }
   .sobre-card-mini-icon.azul svg { color: var(--azul); }
+  .sobre-card-mini-text strong { display: block; font-size: 15px; font-weight: 700; color: var(--texto); }
+  .sobre-card-mini-text span { font-size: 13px; color: var(--texto-muted); }
 
-  .sobre-card-mini-text strong {
-    display: block;
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--texto);
-  }
-
-  .sobre-card-mini-text span {
-    font-size: 13px;
-    color: var(--texto-muted);
-  }
-
-  /* AREAS */
   .areas { background: var(--cinza); }
 
-  .areas-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-  }
+  .areas-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 
   .area-tag {
-    background: white;
-    border: 1.5px solid var(--cinza-medio);
-    border-radius: 10px;
-    padding: 16px 20px;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--azul);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+    background: white; border: 1.5px solid var(--cinza-medio); border-radius: 10px;
+    padding: 16px 20px; font-size: 15px; font-weight: 600; color: var(--azul);
+    text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;
   }
 
   .area-tag svg { width: 18px; height: 18px; color: var(--amarelo-dark); }
 
-  /* CONTATO FINAL */
   .contato-final { background: var(--azul); }
 
   .contato-final-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
   }
 
-  .contato-final h2 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 48px;
-    font-weight: 800;
-    color: var(--branco);
-    line-height: 1.05;
-    margin-bottom: 20px;
-  }
-
+  .contato-final h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 48px; font-weight: 800; color: var(--branco); line-height: 1.05; margin-bottom: 20px; }
   .contato-final h2 span { color: var(--amarelo); }
+  .contato-final p { color: rgba(255,255,255,0.7); font-size: 16px; margin-bottom: 32px; }
 
-  .contato-final p {
-    color: rgba(255,255,255,0.7);
-    font-size: 16px;
-    margin-bottom: 32px;
-  }
-
-  .contato-opcoes {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
+  .contato-opcoes { display: flex; flex-direction: column; gap: 14px; }
 
   .contato-opcao {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 12px;
-    padding: 18px 20px;
-    text-decoration: none;
-    transition: background 0.2s;
+    display: flex; align-items: center; gap: 16px;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px; padding: 18px 20px; text-decoration: none; transition: background 0.2s;
   }
 
   .contato-opcao:hover { background: rgba(255,255,255,0.1); }
 
-  .contato-opcao-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
+  .contato-opcao-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .contato-opcao-icon.verde { background: #25D366; }
   .contato-opcao-icon.azul-c { background: var(--amarelo); }
   .contato-opcao-icon svg { width: 22px; height: 22px; color: white; }
   .contato-opcao-icon.azul-c svg { color: var(--azul); }
+  .contato-opcao-info strong { display: block; color: white; font-size: 16px; font-weight: 700; }
+  .contato-opcao-info span { color: rgba(255,255,255,0.6); font-size: 13px; }
 
-  .contato-opcao-info strong {
-    display: block;
-    color: white;
-    font-size: 16px;
-    font-weight: 700;
-  }
+  .contato-form-card { background: white; border-radius: 16px; padding: 36px; }
+  .contato-form-card h3 { font-size: 22px; font-weight: 700; color: var(--azul); margin-bottom: 8px; }
+  .contato-form-card p { color: var(--texto-muted); font-size: 14px; margin-bottom: 24px; }
 
-  .contato-opcao-info span {
-    color: rgba(255,255,255,0.6);
-    font-size: 13px;
-  }
-
-  .contato-form-card {
-    background: white;
-    border-radius: 16px;
-    padding: 36px;
-  }
-
-  .contato-form-card h3 {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--azul);
-    margin-bottom: 8px;
-  }
-
-  .contato-form-card p {
-    color: var(--texto-muted);
-    font-size: 14px;
-    margin-bottom: 24px;
-  }
-
-  /* FOOTER */
-  footer {
-    background: #06192F;
-    padding: 40px 2rem 24px;
-  }
-
-  .footer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+  footer { background: #06192F; padding: 40px 2rem 24px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
 
   .footer-top {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 40px;
-    padding-bottom: 32px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+    padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.08);
   }
 
-  .footer-logo-name {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 22px;
-    font-weight: 800;
-    color: white;
-  }
-
-  .footer-logo-sub {
-    font-size: 11px;
-    color: var(--amarelo);
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-
-  .footer-desc {
-    color: rgba(255,255,255,0.5);
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .footer-col h4 {
-    color: white;
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .footer-col a, .footer-col p {
-    display: block;
-    color: rgba(255,255,255,0.5);
-    font-size: 14px;
-    text-decoration: none;
-    margin-bottom: 8px;
-    transition: color 0.2s;
-  }
-
+  .footer-logo-name { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 800; color: white; }
+  .footer-logo-sub { font-size: 11px; color: var(--amarelo); font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
+  .footer-desc { color: rgba(255,255,255,0.5); font-size: 14px; line-height: 1.6; }
+  .footer-col h4 { color: white; font-size: 14px; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+  .footer-col a, .footer-col p { display: block; color: rgba(255,255,255,0.5); font-size: 14px; text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
   .footer-col a:hover { color: var(--amarelo); }
 
-  .footer-bottom {
-    padding-top: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
+  .footer-bottom { padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-copy { color: rgba(255,255,255,0.35); font-size: 13px; }
+  .footer-crea { color: var(--amarelo); font-size: 13px; font-weight: 600; }
 
-  .footer-copy {
-    color: rgba(255,255,255,0.35);
-    font-size: 13px;
-  }
-
-  .footer-crea {
-    color: var(--amarelo);
-    font-size: 13px;
-    font-weight: 600;
-  }
-
-  /* FLOATING CTA */
-  .floating-cta {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 999;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-end;
-  }
-
-  .floating-btn {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-    transition: transform 0.2s;
-  }
-
+  .floating-cta { position: fixed; bottom: 24px; right: 24px; z-index: 999; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+  .floating-btn { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.25); transition: transform 0.2s; }
   .floating-btn:hover { transform: scale(1.08); }
   .floating-btn.whats { background: #25D366; }
   .floating-btn.phone { background: var(--azul); }
   .floating-btn.insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
   .floating-btn svg { width: 26px; height: 26px; color: white; }
 
-  /* RESPONSIVO */
   @media (max-width: 900px) {
     .hero-inner { grid-template-columns: 1fr; }
     .hero h1 { font-size: 40px; }
@@ -873,7 +622,6 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="header-inner">
     <a href="#" class="logo">
@@ -897,7 +645,6 @@
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <div>
@@ -906,7 +653,8 @@
         Atendimento em Curitiba e região
       </div>
       <h1>Engenharia Elétrica com <span>Qualidade</span> e Segurança</h1>
-      <p>Instalações elétricas, energia solar, carregadores elétricos, termografia, SPDA e laudos técnicos para residências, condomínios e empresas. Atendimento rápido com responsabilidade técnica e ART.</p>
+      <!-- DESCRIÇÃO ATUALIZADA -->
+      <p>Projetos elétricos, energia solar, instalações elétricas, SPDA, termografia, carregadores elétricos e laudos técnicos para residências, condomínios e empresas. Atendimento rápido com responsabilidade técnica e ART.</p>
       <div class="hero-btns">
         <a href="tel:+5541987774160" class="btn-primary">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2z"/></svg>
@@ -933,7 +681,6 @@
       </div>
     </div>
 
-    <!-- FORMULÁRIO HERO -->
     <div class="hero-contact-card" id="orcamento">
       <h3>Solicite um orçamento grátis</h3>
       <p>Resposta em até 1 hora útil</p>
@@ -950,20 +697,21 @@
           <label>Tipo de serviço</label>
           <select required>
             <option value="">Selecione...</option>
-            <option>Instalação elétrica residencial</option>
+            <option>Projeto elétrico</option>
             <option>Energia solar</option>
-            <option>Manutenção elétrica</option>
-            <option>Termografia elétrica</option>
-            <option>SPDA (Para-raios)</option>
-            <option>Laudo elétrico / ART</option>
-            <option>Instalação de Carregador Elétrico (EV)</option>
+            <option>Instalação elétrica residencial</option>
             <option>Instalação elétrica empresarial</option>
+            <option>SPDA (Para-raios)</option>
+            <option>Termografia elétrica</option>
+            <option>Instalação de Carregador Elétrico (EV)</option>
+            <option>Manutenção elétrica</option>
+            <option>Laudo elétrico / ART</option>
             <option>Outro</option>
           </select>
         </div>
         <div class="form-group">
           <label>Descreva brevemente</label>
-          <textarea placeholder="Ex: preciso trocar o quadro elétrico de um apartamento..."></textarea>
+          <textarea placeholder="Ex: preciso de um projeto elétrico para reforma..."></textarea>
         </div>
         <button type="submit" class="btn-form">Enviar Solicitação →</button>
       </form>
@@ -972,7 +720,6 @@
   </div>
 </section>
 
-<!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-bar-inner">
     <div class="trust-item">
@@ -998,7 +745,6 @@
   </div>
 </div>
 
-<!-- SERVIÇOS -->
 <section class="section">
   <div class="section-header">
     <span class="section-label">Nossos Serviços</span>
@@ -1007,6 +753,15 @@
   </div>
 
   <div class="servicos-grid">
+    <!-- SERVIÇOS REORDENADOS POR PRIORIDADE -->
+    <div class="servico-card">
+      <div class="servico-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <h3>Projetos Elétricos</h3>
+      <p>Elaboração de projetos elétricos residenciais, comerciais e industriais com ART, dentro das normas ABNT NBR 5410. Documentação completa para aprovação e execução.</p>
+    </div>
+
     <div class="servico-card">
       <div class="servico-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -1025,14 +780,6 @@
 
     <div class="servico-card">
       <div class="servico-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-      </div>
-      <h3>Termografia Elétrica</h3>
-      <p>Inspeção termográfica com câmera infravermelha para identificação de falhas em painéis, transformadores e instalações. Laudo técnico conforme IEC 62446-3.</p>
-    </div>
-
-    <div class="servico-card">
-      <div class="servico-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
       </div>
       <h3>SPDA — Para-raios</h3>
@@ -1041,10 +788,10 @@
 
     <div class="servico-card">
       <div class="servico-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
       </div>
-      <h3>Laudos e Projetos Elétricos</h3>
-      <p>Elaboração de laudos elétricos, projetos com ART, AVCB e documentação técnica para imóveis residenciais e comerciais.</p>
+      <h3>Termografia Elétrica</h3>
+      <p>Inspeção termográfica com câmera infravermelha para identificação de falhas em painéis, transformadores e instalações. Laudo técnico conforme IEC 62446-3.</p>
     </div>
 
     <div class="servico-card">
@@ -1057,7 +804,37 @@
   </div>
 </section>
 
-<!-- DIFERENCIAIS -->
+<!-- GALERIA DE PROJETOS -->
+<section class="section" style="background: var(--cinza); padding: 80px 2rem;">
+  <div class="section-header">
+    <span class="section-label">Nossos Projetos</span>
+    <h2>Trabalhos realizados</h2>
+    <p class="section-desc">Projetos executados com qualidade, segurança e responsabilidade técnica em Curitiba e região.</p>
+  </div>
+  <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+    <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 4/3;">
+      <img src="preview3.webp" alt="Instalação solar industrial em telhado" style="width:100%; height:100%; object-fit: cover; display: block;">
+    </div>
+    <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 4/3;">
+      <img src="preview5.webp" alt="Estrutura solar carport" style="width:100%; height:100%; object-fit: cover; display: block;">
+    </div>
+    <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 4/3;">
+      <img src="preview6.webp" alt="Termografia elétrica FLIR" style="width:100%; height:100%; object-fit: cover; display: block;">
+    </div>
+    <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 4/3;">
+      <img src="preview1.webp" alt="Instalação elétrica comercial" style="width:100%; height:100%; object-fit: cover; display: block;">
+    </div>
+    <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 4/3;">
+      <img src="preview2.webp" alt="Manutenção de inversores solares" style="width:100%; height:100%; object-fit: cover; display: block;">
+    </div>
+    <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 4/3; background: var(--azul); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; padding: 24px; text-align: center;">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      <span style="color: white; font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.2;">Seu projeto pode ser o próximo</span>
+      <a href="https://wa.me/5541987774160?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento." target="_blank" style="background: #F5A623; color: #0D2B5E; padding: 10px 20px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 14px;">Solicitar orçamento</a>
+    </div>
+  </div>
+</section>
+
 <section class="section diferenciais">
   <div class="section-header">
     <span class="section-label">Por que nos escolher</span>
@@ -1084,7 +861,6 @@
   </div>
 </section>
 
-<!-- SOBRE -->
 <section class="section">
   <div class="sobre-inner">
     <div class="sobre-content">
@@ -1153,7 +929,6 @@
   </div>
 </section>
 
-<!-- ÁREAS DE ATENDIMENTO -->
 <section class="section areas">
   <div class="section-header">
     <span class="section-label">Área de Atendimento</span>
@@ -1161,42 +936,17 @@
     <p class="section-desc">Atendemos toda a grande Curitiba com agilidade e sem custo de deslocamento adicional.</p>
   </div>
   <div class="areas-grid">
-    <div class="area-tag">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      Curitiba
-    </div>
-    <div class="area-tag">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      São José dos Pinhais
-    </div>
-    <div class="area-tag">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      Pinhais
-    </div>
-    <div class="area-tag">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      Colombo
-    </div>
-    <div class="area-tag">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      Araucária
-    </div>
-    <div class="area-tag">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      Campo Largo
-    </div>
-    <div class="area-tag">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      Fazenda Rio Grande
-    </div>
-    <div class="area-tag">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      Região Metropolitana
-    </div>
+    <div class="area-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Curitiba</div>
+    <div class="area-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>São José dos Pinhais</div>
+    <div class="area-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Pinhais</div>
+    <div class="area-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Colombo</div>
+    <div class="area-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Araucária</div>
+    <div class="area-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Campo Largo</div>
+    <div class="area-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Fazenda Rio Grande</div>
+    <div class="area-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Região Metropolitana</div>
   </div>
 </section>
 
-<!-- CONTATO FINAL -->
 <section class="section contato-final" id="contato">
   <div class="contato-final-inner">
     <div>
@@ -1240,14 +990,15 @@
           <label>Serviço desejado</label>
           <select required>
             <option value="">Selecione...</option>
-            <option>Instalação elétrica residencial</option>
+            <option>Projeto elétrico</option>
             <option>Energia solar</option>
-            <option>Manutenção elétrica</option>
-            <option>Termografia elétrica</option>
-            <option>SPDA (Para-raios)</option>
-            <option>Laudo elétrico / ART</option>
-            <option>Instalação de Carregador Elétrico (EV)</option>
+            <option>Instalação elétrica residencial</option>
             <option>Instalação elétrica empresarial</option>
+            <option>SPDA (Para-raios)</option>
+            <option>Termografia elétrica</option>
+            <option>Instalação de Carregador Elétrico (EV)</option>
+            <option>Manutenção elétrica</option>
+            <option>Laudo elétrico / ART</option>
             <option>Outro</option>
           </select>
         </div>
@@ -1261,7 +1012,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
@@ -1272,17 +1022,19 @@
       </div>
       <div class="footer-col">
         <h4>Serviços</h4>
+        <a href="#">Projetos Elétricos</a>
         <a href="#">Energia Solar</a>
         <a href="#">Instalações Elétricas</a>
-        <a href="#">Termografia</a>
         <a href="#">SPDA / Para-raios</a>
+        <a href="#">Termografia</a>
         <a href="#">Laudos e ART</a>
         <a href="#">Manutenção de Inversores</a>
       </div>
       <div class="footer-col">
         <h4>Contato</h4>
         <a href="tel:+5541987774160">(41) 98777-4160</a>
-        <a href="mailto:alexsandrosalla67@gmail.com">alexsandrosalla67@gmail.com</a>
+        <!-- EMAIL ATUALIZADO -->
+        <a href="mailto:alexsallaengenharia@gmail.com">alexsallaengenharia@gmail.com</a>
         <a href="https://www.instagram.com/salla_energy" target="_blank">📸 @salla_energy</a>
         <p>São José dos Pinhais — PR</p>
         <p>Seg-Sex: 8h às 18h</p>
@@ -1296,7 +1048,6 @@
   </div>
 </footer>
 
-<!-- BOTÕES FLUTUANTES -->
 <div class="floating-cta">
   <a href="tel:+5541987774160" class="floating-btn phone" title="Ligar agora">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2z"/></svg>
@@ -1319,7 +1070,6 @@ function enviarFormulario(e) {
   const msg = form.querySelector('textarea') ? form.querySelector('textarea').value : '';
   const texto = encodeURIComponent(`Olá! Meu nome é ${nome}.\nTelefone: ${tel}\nServiço: ${servico}\n${msg ? 'Mensagem: ' + msg : ''}`);
 
-  // Rastrear conversão de formulário no Google Ads
   gtag('event', 'conversion', {
     'send_to': 'AW-18147341908/7626566833',
     'event_category': 'lead',
@@ -1329,7 +1079,6 @@ function enviarFormulario(e) {
   window.open(`https://wa.me/5541987774160?text=${texto}`, '_blank');
 }
 
-// Rastrear cliques diretos no WhatsApp e telefone
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
     link.addEventListener('click', function() {
