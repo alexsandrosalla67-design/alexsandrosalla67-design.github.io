@@ -3,7 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salla Energy - Engenharia Elétrica | Curitiba e Região</title>
+<title>Eletricista em Curitiba e São José dos Pinhais | Salla Energy</title>
+
+<!-- SEO META TAGS -->
+<meta name="description" content="Eletricista em Curitiba e São José dos Pinhais. Energia solar, instalações elétricas, SPDA, termografia e laudos com ART. Eng. registrado CREA-PR. Orçamento grátis!">
+<meta name="keywords" content="eletricista Curitiba, eletricista São José dos Pinhais, energia solar Curitiba, instalação elétrica Curitiba, SPDA para-raios Curitiba, termografia elétrica, laudo elétrico ART, engenheiro elétrico Curitiba">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Eng. Alexsandro Salla - CREA-PR 212335/D">
+<link rel="canonical" href="https://sallaenergy.github.io/">
+
+<!-- OPEN GRAPH -->
+<meta property="og:title" content="Salla Energy - Eletricista em Curitiba e SJP">
+<meta property="og:description" content="Energia solar, instalações elétricas, SPDA e laudos com ART. Engenheiro registrado CREA-PR. Atendimento em Curitiba e região.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sallaenergy.github.io/">
+<meta property="og:locale" content="pt_BR">
+
+<!-- SCHEMA MARKUP - LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Salla Energy Engenharia Elétrica",
+  "description": "Empresa de engenharia elétrica em São José dos Pinhais. Energia solar, instalações elétricas, SPDA, termografia e laudos técnicos com ART.",
+  "url": "https://sallaenergy.github.io/",
+  "telephone": "+5541987774160",
+  "email": "alexsallaengenharia@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "São José dos Pinhais",
+    "addressRegion": "PR",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -25.5319,
+    "longitude": -49.2094
+  },
+  "openingHours": ["Mo-Fr 08:00-18:00", "Sa 08:00-16:00"],
+  "areaServed": ["Curitiba", "São José dos Pinhais", "Pinhais", "Colombo", "Araucária", "Campo Largo", "Fazenda Rio Grande"],
+  "priceRange": "$$",
+  "sameAs": ["https://www.instagram.com/salla_energy"]
+}
+</script>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JDX8VLDVK"></script>
@@ -14,7 +56,7 @@
   gtag('config', 'G-0JDX8VLDVK');
   gtag('config', 'AW-18147341908');
 </script>
-<meta name="description" content="Eletricista em Curitiba e região. Energia solar, instalações elétricas, termografia, SPDA, laudos elétricos. Atendimento residencial e empresarial. Ligue agora!">
+
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,6 +72,7 @@
     --texto: #0D1B2A;
     --texto-muted: #5A6478;
     --branco: #FFFFFF;
+    --verde: #25D366;
   }
 
   html { scroll-behavior: smooth; }
@@ -41,6 +84,7 @@
     line-height: 1.6;
   }
 
+  /* HEADER */
   header {
     background: var(--azul);
     padding: 0 2rem;
@@ -59,564 +103,228 @@
     height: 68px;
   }
 
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-  }
-
-  .logo-icon {
-    width: 40px;
-    height: 40px;
-    background: var(--amarelo);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo-icon { width: 40px; height: 40px; background: var(--amarelo); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
   .logo-icon svg { width: 24px; height: 24px; }
+  .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .logo-name { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800; color: var(--branco); letter-spacing: 0.5px; }
+  .logo-sub { font-size: 10px; color: var(--amarelo); font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; }
 
-  .logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
-  }
-
-  .logo-name {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    color: var(--branco);
-    letter-spacing: 0.5px;
-  }
-
-  .logo-sub {
-    font-size: 10px;
-    color: var(--amarelo);
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-  }
-
-  .header-cta {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
+  .header-cta { display: flex; align-items: center; gap: 1rem; }
 
   .btn-whatsapp {
-    background: #25D366;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: background 0.2s;
+    background: #25D366; color: white; padding: 10px 20px; border-radius: 6px;
+    text-decoration: none; font-weight: 600; font-size: 14px;
+    display: flex; align-items: center; gap: 8px; transition: background 0.2s;
   }
-
   .btn-whatsapp:hover { background: #1eb558; }
+  .header-phone { color: var(--amarelo); font-weight: 700; font-size: 16px; text-decoration: none; }
 
-  .header-phone {
-    color: var(--amarelo);
-    font-weight: 700;
-    font-size: 16px;
-    text-decoration: none;
-  }
-
+  /* HERO */
   .hero {
     background: linear-gradient(135deg, var(--azul) 0%, var(--azul-medio) 60%, var(--azul-claro) 100%);
     padding: 80px 2rem;
     position: relative;
     overflow: hidden;
   }
-
   .hero::before {
     content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 600px;
-    height: 600px;
+    position: absolute; top: -50%; right: -10%;
+    width: 600px; height: 600px;
     background: radial-gradient(circle, rgba(245,166,35,0.12) 0%, transparent 70%);
     pointer-events: none;
   }
-
-  .hero-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 
   .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(245,166,35,0.15);
-    border: 1px solid rgba(245,166,35,0.4);
-    color: var(--amarelo);
-    padding: 6px 14px;
-    border-radius: 100px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    margin-bottom: 24px;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(245,166,35,0.15); border: 1px solid rgba(245,166,35,0.4);
+    color: var(--amarelo); padding: 6px 14px; border-radius: 100px;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 24px;
   }
+  .hero-badge-dot { width: 8px; height: 8px; background: var(--amarelo); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-  .hero-badge-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--amarelo);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
-
-  .hero h1 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 56px;
-    font-weight: 800;
-    color: var(--branco);
-    line-height: 1.05;
-    margin-bottom: 20px;
-    letter-spacing: -0.5px;
-  }
-
+  .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-size: 54px; font-weight: 800; color: var(--branco); line-height: 1.05; margin-bottom: 20px; letter-spacing: -0.5px; }
   .hero h1 span { color: var(--amarelo); }
+  .hero p { color: rgba(255,255,255,0.8); font-size: 18px; margin-bottom: 36px; max-width: 480px; }
 
-  .hero p {
-    color: rgba(255,255,255,0.8);
-    font-size: 18px;
-    margin-bottom: 36px;
-    max-width: 480px;
-  }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
 
-  .hero-btns {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary {
-    background: var(--amarelo);
-    color: var(--azul);
-    padding: 16px 32px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 16px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: background 0.2s, transform 0.1s;
-  }
-
+  .btn-primary { background: var(--amarelo); color: var(--azul); padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 16px; display: inline-flex; align-items: center; gap: 10px; transition: background 0.2s, transform 0.1s; }
   .btn-primary:hover { background: var(--amarelo-dark); transform: translateY(-1px); }
-
-  .btn-secondary {
-    background: transparent;
-    color: var(--branco);
-    border: 2px solid rgba(255,255,255,0.4);
-    padding: 16px 32px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: border-color 0.2s, background 0.2s;
-  }
-
+  .btn-secondary { background: transparent; color: var(--branco); border: 2px solid rgba(255,255,255,0.4); padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; gap: 10px; transition: border-color 0.2s, background 0.2s; }
   .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.08); }
 
-  .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 12px;
-    overflow: hidden;
-    margin-top: 48px;
-  }
+  .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; margin-top: 48px; }
+  .hero-stat { background: rgba(255,255,255,0.06); padding: 20px; text-align: center; }
+  .hero-stat-num { font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 800; color: var(--amarelo); line-height: 1; }
+  .hero-stat-label { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 4px; font-weight: 500; }
 
-  .hero-stat {
-    background: rgba(255,255,255,0.06);
-    padding: 20px;
-    text-align: center;
-  }
-
-  .hero-stat-num {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 36px;
-    font-weight: 800;
-    color: var(--amarelo);
-    line-height: 1;
-  }
-
-  .hero-stat-label {
-    font-size: 12px;
-    color: rgba(255,255,255,0.6);
-    margin-top: 4px;
-    font-weight: 500;
-  }
-
-  .hero-contact-card {
-    background: var(--branco);
-    border-radius: 16px;
-    padding: 36px;
-    box-shadow: 0 24px 80px rgba(0,0,0,0.3);
-  }
-
-  .hero-contact-card h3 {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--azul);
-    margin-bottom: 8px;
-  }
-
-  .hero-contact-card p {
-    color: var(--texto-muted);
-    font-size: 14px;
-    margin-bottom: 24px;
-  }
+  .hero-contact-card { background: var(--branco); border-radius: 16px; padding: 36px; box-shadow: 0 24px 80px rgba(0,0,0,0.3); }
+  .hero-contact-card h3 { font-size: 20px; font-weight: 700; color: var(--azul); margin-bottom: 8px; }
+  .hero-contact-card > p { color: var(--texto-muted); font-size: 14px; margin-bottom: 24px; }
 
   .form-group { margin-bottom: 16px; }
-
-  .form-group label {
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--texto);
-    margin-bottom: 6px;
+  .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--texto); margin-bottom: 6px; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 12px 16px; border: 1.5px solid #DDE1EA;
+    border-radius: 8px; font-family: 'Barlow', sans-serif; font-size: 15px;
+    color: var(--texto); background: white; transition: border-color 0.2s; outline: none;
   }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1.5px solid #DDE1EA;
-    border-radius: 8px;
-    font-family: 'Barlow', sans-serif;
-    font-size: 15px;
-    color: var(--texto);
-    background: white;
-    transition: border-color 0.2s;
-    outline: none;
-  }
-
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus { border-color: var(--azul-claro); }
-
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--azul-claro); }
   .form-group textarea { height: 80px; resize: none; }
 
-  .btn-form {
-    width: 100%;
-    background: var(--azul);
-    color: white;
-    padding: 14px;
-    border: none;
-    border-radius: 8px;
-    font-family: 'Barlow', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.2s;
-    margin-top: 8px;
-  }
-
+  .btn-form { width: 100%; background: var(--azul); color: white; padding: 14px; border: none; border-radius: 8px; font-family: 'Barlow', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; margin-top: 8px; }
   .btn-form:hover { background: var(--azul-medio); }
+  .form-note { text-align: center; font-size: 12px; color: var(--texto-muted); margin-top: 12px; }
 
-  .form-note {
-    text-align: center;
-    font-size: 12px;
-    color: var(--texto-muted);
-    margin-top: 12px;
-  }
+  /* TRUST BAR */
+  .trust-bar { background: var(--cinza); padding: 20px 2rem; border-bottom: 1px solid var(--cinza-medio); }
+  .trust-bar-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+  .trust-item { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--azul); }
 
-  .trust-bar {
-    background: var(--cinza);
-    padding: 20px 2rem;
-    border-bottom: 1px solid var(--cinza-medio);
-  }
-
-  .trust-bar-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-
-  .trust-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--azul);
-  }
-
+  /* SECTIONS */
   .section { padding: 80px 2rem; }
-
-  .section-header {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 56px;
-  }
-
-  .section-label {
-    display: inline-block;
-    background: rgba(13,43,94,0.08);
-    color: var(--azul);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 6px 16px;
-    border-radius: 100px;
-    margin-bottom: 16px;
-  }
-
-  .section h2 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 42px;
-    font-weight: 800;
-    color: var(--azul);
-    line-height: 1.1;
-    margin-bottom: 16px;
-  }
-
+  .section-header { text-align: center; max-width: 600px; margin: 0 auto 56px; }
+  .section-label { display: inline-block; background: rgba(13,43,94,0.08); color: var(--azul); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 16px; }
+  .section h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 42px; font-weight: 800; color: var(--azul); line-height: 1.1; margin-bottom: 16px; }
   .section-desc { color: var(--texto-muted); font-size: 16px; }
 
-  .servicos-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-
-  .servico-card {
-    background: var(--branco);
-    border: 1.5px solid var(--cinza-medio);
-    border-radius: 14px;
-    padding: 28px;
-    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-
-  .servico-card:hover {
-    border-color: var(--azul-claro);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(13,43,94,0.12);
-  }
-
-  .servico-icon {
-    width: 52px;
-    height: 52px;
-    background: rgba(13,43,94,0.07);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-
+  /* SERVIÇOS */
+  .servicos-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .servico-card { background: var(--branco); border: 1.5px solid var(--cinza-medio); border-radius: 14px; padding: 28px; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
+  .servico-card:hover { border-color: var(--azul-claro); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(13,43,94,0.12); }
+  .servico-icon { width: 52px; height: 52px; background: rgba(13,43,94,0.07); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
   .servico-icon svg { width: 28px; height: 28px; color: var(--azul); }
   .servico-card h3 { font-size: 18px; font-weight: 700; color: var(--azul); margin-bottom: 10px; }
   .servico-card p { font-size: 14px; color: var(--texto-muted); line-height: 1.6; }
 
+  /* DEPOIMENTOS */
+  .depoimentos { background: var(--cinza); }
+  .depoimentos-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .depoimento-card { background: white; border-radius: 14px; padding: 28px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); position: relative; }
+  .depoimento-card::before { content: '"'; font-family: 'Barlow Condensed', sans-serif; font-size: 80px; font-weight: 800; color: var(--amarelo); opacity: 0.3; position: absolute; top: 8px; left: 20px; line-height: 1; }
+  .depoimento-stars { color: var(--amarelo); font-size: 16px; margin-bottom: 12px; }
+  .depoimento-texto { font-size: 15px; color: var(--texto); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+  .depoimento-autor { display: flex; align-items: center; gap: 12px; }
+  .depoimento-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--azul); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 16px; flex-shrink: 0; }
+  .depoimento-info strong { display: block; font-size: 14px; font-weight: 700; color: var(--texto); }
+  .depoimento-info span { font-size: 13px; color: var(--texto-muted); }
+
+  /* DIFERENCIAIS */
   .diferenciais { background: var(--azul); }
   .diferenciais .section-label { background: rgba(245,166,35,0.2); color: var(--amarelo); }
   .diferenciais h2 { color: var(--branco); }
   .diferenciais .section-desc { color: rgba(255,255,255,0.6); }
-
-  .diferenciais-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 14px;
-    overflow: hidden;
-  }
-
+  .diferenciais-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: rgba(255,255,255,0.08); border-radius: 14px; overflow: hidden; }
   .diferencial-item { background: rgba(255,255,255,0.04); padding: 32px 24px; text-align: center; }
-
-  .diferencial-num {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 48px;
-    font-weight: 800;
-    color: var(--amarelo);
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-
+  .diferencial-num { font-family: 'Barlow Condensed', sans-serif; font-size: 48px; font-weight: 800; color: var(--amarelo); line-height: 1; margin-bottom: 8px; }
   .diferencial-label { font-size: 14px; color: rgba(255,255,255,0.7); font-weight: 500; }
 
-  .sobre-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-
-  .sobre-content h2 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 42px;
-    font-weight: 800;
-    color: var(--azul);
-    margin-bottom: 20px;
-    line-height: 1.1;
-  }
-
+  /* SOBRE */
+  .sobre-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .sobre-content h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 42px; font-weight: 800; color: var(--azul); margin-bottom: 20px; line-height: 1.1; }
   .sobre-content p { color: var(--texto-muted); font-size: 16px; margin-bottom: 16px; line-height: 1.7; }
-
   .sobre-lista { list-style: none; margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
-
   .sobre-lista li { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 500; color: var(--texto); }
-
-  .check-icon {
-    width: 24px; height: 24px;
-    background: rgba(13,43,94,0.08);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-  }
-
+  .check-icon { width: 24px; height: 24px; background: rgba(13,43,94,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .check-icon svg { width: 14px; height: 14px; color: var(--azul); }
-
   .sobre-visual { background: var(--cinza); border-radius: 20px; padding: 40px; display: flex; flex-direction: column; gap: 16px; }
 
-  .sobre-card-mini {
-    background: white; border-radius: 12px; padding: 20px;
-    display: flex; align-items: center; gap: 16px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  }
+  /* FAQ */
+  .faq { background: var(--cinza); }
+  .faq-grid { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+  .faq-item { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .faq-pergunta { width: 100%; background: none; border: none; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: 'Barlow', sans-serif; font-size: 16px; font-weight: 600; color: var(--azul); text-align: left; transition: background 0.2s; }
+  .faq-pergunta:hover { background: rgba(13,43,94,0.03); }
+  .faq-icon { width: 24px; height: 24px; background: var(--amarelo); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s; }
+  .faq-icon svg { width: 14px; height: 14px; color: var(--azul); transition: transform 0.3s; }
+  .faq-item.open .faq-icon svg { transform: rotate(45deg); }
+  .faq-resposta { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s; padding: 0 24px; }
+  .faq-item.open .faq-resposta { max-height: 200px; padding: 0 24px 20px; }
+  .faq-resposta p { color: var(--texto-muted); font-size: 15px; line-height: 1.7; }
 
-  .sobre-card-mini-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .sobre-card-mini-icon.amarelo { background: rgba(245,166,35,0.15); }
-  .sobre-card-mini-icon.azul { background: rgba(13,43,94,0.1); }
-  .sobre-card-mini-icon svg { width: 22px; height: 22px; }
-  .sobre-card-mini-icon.amarelo svg { color: var(--amarelo-dark); }
-  .sobre-card-mini-icon.azul svg { color: var(--azul); }
-  .sobre-card-mini-text strong { display: block; font-size: 15px; font-weight: 700; color: var(--texto); }
-  .sobre-card-mini-text span { font-size: 13px; color: var(--texto-muted); }
-
-  .areas { background: var(--cinza); }
-
+  /* ÁREAS */
+  .areas { background: white; }
   .areas-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-
-  .area-tag {
-    background: white; border: 1.5px solid var(--cinza-medio); border-radius: 10px;
-    padding: 16px 20px; font-size: 15px; font-weight: 600; color: var(--azul);
-    text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;
-  }
-
+  .area-tag { background: var(--cinza); border: 1.5px solid var(--cinza-medio); border-radius: 10px; padding: 16px 20px; font-size: 15px; font-weight: 600; color: var(--azul); text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; }
   .area-tag svg { width: 18px; height: 18px; color: var(--amarelo-dark); }
 
+  /* CONTATO FINAL */
   .contato-final { background: var(--azul); }
-
-  .contato-final-inner {
-    max-width: 1200px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 80px; align-items: center;
-  }
-
+  .contato-final-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
   .contato-final h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 48px; font-weight: 800; color: var(--branco); line-height: 1.05; margin-bottom: 20px; }
   .contato-final h2 span { color: var(--amarelo); }
-  .contato-final p { color: rgba(255,255,255,0.7); font-size: 16px; margin-bottom: 32px; }
-
+  .contato-final > div > p { color: rgba(255,255,255,0.7); font-size: 16px; margin-bottom: 32px; }
   .contato-opcoes { display: flex; flex-direction: column; gap: 14px; }
-
-  .contato-opcao {
-    display: flex; align-items: center; gap: 16px;
-    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 12px; padding: 18px 20px; text-decoration: none; transition: background 0.2s;
-  }
-
+  .contato-opcao { display: flex; align-items: center; gap: 16px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 18px 20px; text-decoration: none; transition: background 0.2s; }
   .contato-opcao:hover { background: rgba(255,255,255,0.1); }
-
   .contato-opcao-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .contato-opcao-icon.verde { background: #25D366; }
-  .contato-opcao-icon.azul-c { background: var(--amarelo); }
+  .contato-opcao-icon.amarelo-c { background: var(--amarelo); }
   .contato-opcao-icon svg { width: 22px; height: 22px; color: white; }
-  .contato-opcao-icon.azul-c svg { color: var(--azul); }
+  .contato-opcao-icon.amarelo-c svg { color: var(--azul); }
   .contato-opcao-info strong { display: block; color: white; font-size: 16px; font-weight: 700; }
   .contato-opcao-info span { color: rgba(255,255,255,0.6); font-size: 13px; }
-
   .contato-form-card { background: white; border-radius: 16px; padding: 36px; }
   .contato-form-card h3 { font-size: 22px; font-weight: 700; color: var(--azul); margin-bottom: 8px; }
-  .contato-form-card p { color: var(--texto-muted); font-size: 14px; margin-bottom: 24px; }
+  .contato-form-card > p { color: var(--texto-muted); font-size: 14px; margin-bottom: 24px; }
 
+  /* FOOTER */
   footer { background: #06192F; padding: 40px 2rem 24px; }
   .footer-inner { max-width: 1200px; margin: 0 auto; }
-
-  .footer-top {
-    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
-    padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .footer-logo-name { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 800; color: white; }
   .footer-logo-sub { font-size: 11px; color: var(--amarelo); font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
   .footer-desc { color: rgba(255,255,255,0.5); font-size: 14px; line-height: 1.6; }
   .footer-col h4 { color: white; font-size: 14px; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
   .footer-col a, .footer-col p { display: block; color: rgba(255,255,255,0.5); font-size: 14px; text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
   .footer-col a:hover { color: var(--amarelo); }
-
   .footer-bottom { padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
   .footer-copy { color: rgba(255,255,255,0.35); font-size: 13px; }
   .footer-crea { color: var(--amarelo); font-size: 13px; font-weight: 600; }
 
+  /* FLOATING CTA MELHORADO */
   .floating-cta { position: fixed; bottom: 24px; right: 24px; z-index: 999; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+  .floating-btn-wrap { display: flex; align-items: center; gap: 10px; }
+  .floating-label { background: rgba(0,0,0,0.75); color: white; font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 6px; white-space: nowrap; opacity: 0; transform: translateX(8px); transition: opacity 0.2s, transform 0.2s; pointer-events: none; }
+  .floating-btn-wrap:hover .floating-label { opacity: 1; transform: translateX(0); }
   .floating-btn { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.25); transition: transform 0.2s; }
   .floating-btn:hover { transform: scale(1.08); }
-  .floating-btn.whats { background: #25D366; }
+  .floating-btn.whats { background: #25D366; box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
   .floating-btn.phone { background: var(--azul); }
   .floating-btn.insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
   .floating-btn svg { width: 26px; height: 26px; color: white; }
 
+  /* PULSE WHATS */
+  .floating-btn.whats { animation: whats-pulse 3s infinite; }
+  @keyframes whats-pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+    50% { box-shadow: 0 4px 32px rgba(37,211,102,0.7), 0 0 0 8px rgba(37,211,102,0.1); }
+  }
+
+  /* RESPONSIVE */
   @media (max-width: 900px) {
     .hero-inner { grid-template-columns: 1fr; }
     .hero h1 { font-size: 40px; }
     .hero-contact-card { display: none; }
     .servicos-grid { grid-template-columns: repeat(2, 1fr); }
     .diferenciais-grid { grid-template-columns: repeat(2, 1fr); }
+    .depoimentos-grid { grid-template-columns: 1fr; }
     .sobre-inner { grid-template-columns: 1fr; }
-    .sobre-visual { display: none; }
+    .sobre-visual { display: flex; padding: 24px; }
     .areas-grid { grid-template-columns: repeat(2, 1fr); }
     .contato-final-inner { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr; }
   }
-
   @media (max-width: 600px) {
     .servicos-grid { grid-template-columns: 1fr; }
     .hero h1 { font-size: 34px; }
     .diferenciais-grid { grid-template-columns: repeat(2, 1fr); }
     .areas-grid { grid-template-columns: repeat(2, 1fr); }
     .header-phone { display: none; }
+    .depoimentos-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -650,19 +358,18 @@
     <div>
       <div class="hero-badge">
         <span class="hero-badge-dot"></span>
-        Atendimento em Curitiba e região
+        Eletricista em Curitiba e São José dos Pinhais
       </div>
       <h1>Engenharia Elétrica com <span>Qualidade</span> e Segurança</h1>
-      <!-- DESCRIÇÃO ATUALIZADA -->
-      <p>Projetos elétricos, energia solar, instalações elétricas, SPDA, termografia, carregadores elétricos e laudos técnicos para residências, condomínios e empresas. Atendimento rápido com responsabilidade técnica e ART.</p>
+      <p>Energia solar, instalações elétricas, SPDA, termografia e laudos técnicos para residências, condomínios e empresas em Curitiba e região. ART em todos os serviços.</p>
       <div class="hero-btns">
-        <a href="tel:+5541987774160" class="btn-primary">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2z"/></svg>
-          Ligar Agora
+        <a href="https://wa.me/5541987774160?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento." class="btn-primary" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Pedir Orçamento Grátis
         </a>
-        <a href="#orcamento" class="btn-secondary">
-          Solicitar Orçamento
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        <a href="tel:+5541987774160" class="btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2z"/></svg>
+          Ligar Agora
         </a>
       </div>
       <div class="hero-stats">
@@ -713,7 +420,7 @@
           <label>Descreva brevemente</label>
           <textarea placeholder="Ex: preciso de um projeto elétrico para reforma..."></textarea>
         </div>
-        <button type="submit" class="btn-form">Enviar Solicitação →</button>
+        <button type="submit" class="btn-form">Enviar pelo WhatsApp →</button>
       </form>
       <p class="form-note">🔒 Seus dados são confidenciais. Sem spam.</p>
     </div>
@@ -722,119 +429,117 @@
 
 <div class="trust-bar">
   <div class="trust-bar-inner">
-    <div class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#F5A623"><polyline points="20 6 9 17 4 12"/></svg>
-      Engenheiro registrado no CREA
-    </div>
-    <div class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#F5A623"><polyline points="20 6 9 17 4 12"/></svg>
-      ART em todos os serviços
-    </div>
-    <div class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#F5A623"><polyline points="20 6 9 17 4 12"/></svg>
-      Atendimento em 24h
-    </div>
-    <div class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#F5A623"><polyline points="20 6 9 17 4 12"/></svg>
-      Orçamento 100% gratuito
-    </div>
-    <div class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#F5A623"><polyline points="20 6 9 17 4 12"/></svg>
-      Garantia nos serviços
-    </div>
+    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#F5A623"><polyline points="20 6 9 17 4 12"/></svg>Engenheiro registrado no CREA</div>
+    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#F5A623"><polyline points="20 6 9 17 4 12"/></svg>ART em todos os serviços</div>
+    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#F5A623"><polyline points="20 6 9 17 4 12"/></svg>Atendimento em até 24h</div>
+    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#F5A623"><polyline points="20 6 9 17 4 12"/></svg>Orçamento 100% gratuito</div>
+    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#F5A623"><polyline points="20 6 9 17 4 12"/></svg>Garantia nos serviços</div>
   </div>
 </div>
 
+<!-- SERVIÇOS -->
 <section class="section">
   <div class="section-header">
     <span class="section-label">Nossos Serviços</span>
     <h2>Soluções elétricas completas</h2>
-    <p class="section-desc">Do residencial ao industrial, oferecemos engenharia elétrica com responsabilidade técnica e qualidade comprovada.</p>
+    <p class="section-desc">Do residencial ao industrial, engenharia elétrica com responsabilidade técnica em Curitiba e região.</p>
   </div>
-
   <div class="servicos-grid">
-    <!-- SERVIÇOS REORDENADOS POR PRIORIDADE -->
     <div class="servico-card">
-      <div class="servico-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-      </div>
+      <div class="servico-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
       <h3>Projetos Elétricos</h3>
-      <p>Elaboração de projetos elétricos residenciais, comerciais e industriais com ART, dentro das normas ABNT NBR 5410. Documentação completa para aprovação e execução.</p>
+      <p>Projetos elétricos residenciais, comerciais e industriais com ART, dentro das normas ABNT NBR 5410. Documentação completa para aprovação e execução.</p>
     </div>
-
     <div class="servico-card">
-      <div class="servico-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      </div>
+      <div class="servico-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
       <h3>Energia Solar Fotovoltaica</h3>
-      <p>Projeto, instalação e manutenção de sistemas de energia solar. Homologação junto à Copel com toda a documentação técnica e ART.</p>
+      <p>Instalação e manutenção de sistemas de energia solar em Curitiba e SJP. Homologação Copel com documentação técnica completa e ART.</p>
     </div>
-
     <div class="servico-card">
-      <div class="servico-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-      </div>
+      <div class="servico-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
       <h3>Instalações Elétricas</h3>
-      <p>Instalações e reformas elétricas residenciais, comerciais e industriais. Projetos com ART, dentro das normas ABNT NBR 5410.</p>
+      <p>Instalações e reformas elétricas residenciais, comerciais e industriais em São José dos Pinhais e Curitiba. Normas ABNT NBR 5410 com ART.</p>
     </div>
-
     <div class="servico-card">
-      <div class="servico-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-      </div>
+      <div class="servico-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
       <h3>SPDA — Para-raios</h3>
-      <p>Projeto e instalação de Sistema de Proteção contra Descargas Atmosféricas (SPDA) para residências, condomínios e indústrias. Laudo e ART.</p>
+      <p>Projeto e instalação de Sistema de Proteção contra Descargas Atmosféricas para residências, condomínios e indústrias. Laudo técnico e ART.</p>
     </div>
-
     <div class="servico-card">
-      <div class="servico-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-      </div>
+      <div class="servico-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
       <h3>Termografia Elétrica</h3>
-      <p>Inspeção termográfica com câmera infravermelha para identificação de falhas em painéis, transformadores e instalações. Laudo técnico conforme IEC 62446-3.</p>
+      <p>Inspeção termográfica com câmera infravermelha para identificação de falhas em painéis e instalações. Laudo conforme IEC 62446-3.</p>
     </div>
-
     <div class="servico-card">
-      <div class="servico-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-      </div>
+      <div class="servico-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
       <h3>Manutenção de Inversores</h3>
-      <p>Diagnóstico, reparo e manutenção de inversores solares de todas as marcas. Atendimento em campo e em bancada com garantia.</p>
+      <p>Diagnóstico e reparo de inversores solares de todas as marcas — Sungrow, Growatt, Huawei, Fronius. Atendimento em campo e bancada.</p>
     </div>
   </div>
 </section>
 
-<!-- GALERIA DE PROJETOS -->
+<!-- GALERIA -->
 <section class="section" style="background: var(--cinza); padding: 80px 2rem;">
   <div class="section-header">
     <span class="section-label">Nossos Projetos</span>
     <h2>Trabalhos realizados</h2>
-    <p class="section-desc">Projetos executados com qualidade, segurança e responsabilidade técnica em Curitiba e região.</p>
+    <p class="section-desc">Projetos executados com qualidade e responsabilidade técnica em Curitiba e região.</p>
   </div>
   <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
-    <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 4/3;">
-      <img src="preview3.webp" alt="Instalação solar industrial em telhado" style="width:100%; height:100%; object-fit: cover; display: block;">
-    </div>
-    <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 4/3;">
-      <img src="preview5.webp" alt="Estrutura solar carport" style="width:100%; height:100%; object-fit: cover; display: block;">
-    </div>
-    <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 4/3;">
-      <img src="preview6.webp" alt="Termografia elétrica FLIR" style="width:100%; height:100%; object-fit: cover; display: block;">
-    </div>
-    <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 4/3;">
-      <img src="preview1.webp" alt="Instalação elétrica comercial" style="width:100%; height:100%; object-fit: cover; display: block;">
-    </div>
-    <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 4/3;">
-      <img src="preview2.webp" alt="Manutenção de inversores solares" style="width:100%; height:100%; object-fit: cover; display: block;">
-    </div>
-    <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 4/3; background: var(--azul); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; padding: 24px; text-align: center;">
+    <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 4/3;"><img src="preview3.webp" alt="Instalação solar industrial Curitiba" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+    <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 4/3;"><img src="preview5.webp" alt="Energia solar São José dos Pinhais" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+    <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 4/3;"><img src="preview6.webp" alt="Termografia elétrica FLIR Curitiba" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+    <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 4/3;"><img src="preview1.webp" alt="Instalação elétrica comercial Curitiba" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+    <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 4/3;"><img src="preview2.webp" alt="Manutenção inversores solares" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+    <div style="border-radius:14px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.1); aspect-ratio:4/3; background:var(--azul); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:12px; padding:24px; text-align:center;">
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-      <span style="color: white; font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.2;">Seu projeto pode ser o próximo</span>
-      <a href="https://wa.me/5541987774160?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento." target="_blank" style="background: #F5A623; color: #0D2B5E; padding: 10px 20px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 14px;">Solicitar orçamento</a>
+      <span style="color:white; font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:700; line-height:1.2;">Seu projeto pode ser o próximo</span>
+      <a href="https://wa.me/5541987774160?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento." target="_blank" style="background:#F5A623; color:#0D2B5E; padding:10px 20px; border-radius:8px; font-weight:700; text-decoration:none; font-size:14px;">Solicitar orçamento</a>
     </div>
   </div>
 </section>
 
+<!-- AVALIAÇÕES GOOGLE -->
+<section class="section depoimentos">
+  <div class="section-header">
+    <span class="section-label">Avaliações</span>
+    <h2>O que nossos clientes dizem</h2>
+    <p class="section-desc">Veja as avaliações reais de clientes no Google.</p>
+  </div>
+  <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+    <!-- CARD GOOGLE REVIEWS -->
+    <div style="background: white; border-radius: 20px; padding: 40px 48px; box-shadow: 0 8px 40px rgba(0,0,0,0.1); display: inline-block; width: 100%;">
+      <!-- Logo Google -->
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px;">
+        <svg width="32" height="32" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <span style="font-size: 22px; font-weight: 700; color: #3c4043;">Google</span>
+      </div>
+
+      <!-- Estrelas -->
+      <div style="font-size: 40px; color: #F5A623; letter-spacing: 4px; margin-bottom: 8px;">★★★★★</div>
+      <p style="font-size: 28px; font-weight: 800; color: var(--azul); margin-bottom: 4px;">5,0</p>
+      <p style="font-size: 14px; color: var(--texto-muted); margin-bottom: 32px;">Baseado nas avaliações do Google</p>
+
+      <!-- Botão -->
+      <a href="https://share.google/IpntpbOkyiCRQNeqF" target="_blank"
+        style="display: inline-flex; align-items: center; gap: 10px; background: var(--azul); color: white; padding: 16px 32px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px; transition: background 0.2s; margin-bottom: 20px;"
+        onmouseover="this.style.background='#1A4080'" onmouseout="this.style.background='var(--azul)'">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="white"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="white"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="white"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="white"/></svg>
+        Ver avaliações no Google
+      </a>
+
+      <div style="border-top: 1px solid var(--cinza-medio); padding-top: 20px;">
+        <p style="font-size: 14px; color: var(--texto-muted); margin-bottom: 12px;">Já utilizou nossos serviços? Deixe sua avaliação:</p>
+        <a href="https://share.google/IpntpbOkyiCRQNeqF" target="_blank"
+          style="display: inline-flex; align-items: center; gap: 8px; background: #F4F6FA; color: var(--azul); padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; border: 1.5px solid var(--cinza-medio);">
+          ⭐ Avaliar no Google
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
 <section class="section diferenciais">
   <div class="section-header">
     <span class="section-label">Por que nos escolher</span>
@@ -842,84 +547,98 @@
     <p class="section-desc">Experiência, técnica e compromisso com a satisfação do cliente em cada projeto.</p>
   </div>
   <div class="diferenciais-grid">
-    <div class="diferencial-item">
-      <div class="diferencial-num">10+</div>
-      <div class="diferencial-label">Anos de experiência</div>
-    </div>
-    <div class="diferencial-item">
-      <div class="diferencial-num">100%</div>
-      <div class="diferencial-label">Serviços com ART</div>
-    </div>
-    <div class="diferencial-item">
-      <div class="diferencial-num">24h</div>
-      <div class="diferencial-label">Prazo de resposta</div>
-    </div>
-    <div class="diferencial-item">
-      <div class="diferencial-num">CREA-PR</div>
-      <div class="diferencial-label">Eng. registrado</div>
-    </div>
+    <div class="diferencial-item"><div class="diferencial-num">10+</div><div class="diferencial-label">Anos de experiência</div></div>
+    <div class="diferencial-item"><div class="diferencial-num">100%</div><div class="diferencial-label">Serviços com ART</div></div>
+    <div class="diferencial-item"><div class="diferencial-num">24h</div><div class="diferencial-label">Prazo de resposta</div></div>
+    <div class="diferencial-item"><div class="diferencial-num">CREA-PR</div><div class="diferencial-label">Eng. registrado</div></div>
   </div>
 </section>
 
+<!-- SOBRE -->
 <section class="section">
   <div class="sobre-inner">
     <div class="sobre-content">
       <span class="section-label">Sobre nós</span>
       <h2>Engenharia elétrica com responsabilidade técnica</h2>
-      <p>A Salla Energy é uma empresa de engenharia elétrica com sede em São José dos Pinhais, atendendo toda a região metropolitana de Curitiba. Fundada pelo Eng. Alexsandro Salla, oferecemos serviços com foco em qualidade, segurança e conformidade com as normas técnicas.</p>
+      <p>A Salla Energy é uma empresa de engenharia elétrica com sede em São José dos Pinhais, atendendo toda a região metropolitana de Curitiba. Fundada pelo Eng. Alexsandro Salla, oferecemos serviços de instalação elétrica, energia solar, SPDA e termografia com foco em qualidade e conformidade com as normas técnicas.</p>
       <p>Cada serviço é executado com responsabilidade técnica, documentação completa e ART — garantindo segurança para você, sua família ou seu negócio.</p>
       <ul class="sobre-lista">
-        <li>
-          <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-          Engenheiro elétrico registrado no CREA-PR 212335/D
-        </li>
-        <li>
-          <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-          Pós-graduado em Gestão de Projetos
-        </li>
-        <li>
-          <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-          Experiência em projetos de grande porte
-        </li>
-        <li>
-          <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-          Atendimento residencial, comercial e industrial
-        </li>
+        <li><div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>Engenheiro elétrico registrado no CREA-PR 212335/D</li>
+        <li><div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>Pós-graduado em Gestão de Projetos</li>
+        <li><div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>Experiência em projetos de grande porte</li>
+        <li><div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>Atendimento residencial, comercial e industrial</li>
       </ul>
     </div>
-
-    <div class="sobre-visual" style="align-items: center; justify-content: center;">
-      <div style="text-align: center;">
-        <div style="width: 220px; height: 220px; border-radius: 50%; overflow: hidden; margin: 0 auto 20px; border: 4px solid var(--amarelo); box-shadow: 0 8px 32px rgba(13,43,94,0.18);">
-          <img src="Gemini_Generated_Image_2lmb7t2lmb7t2lmb.png" alt="Eng. Alexsandro Salla" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
+    <div class="sobre-visual" style="align-items:center; justify-content:center;">
+      <div style="text-align:center;">
+        <div style="width:220px; height:220px; border-radius:50%; overflow:hidden; margin:0 auto 20px; border:4px solid var(--amarelo); box-shadow:0 8px 32px rgba(13,43,94,0.18);">
+          <img src="Gemini_Generated_Image_2lmb7t2lmb7t2lmb.png" alt="Eng. Alexsandro Salla - Eletricista Curitiba" style="width:100%; height:100%; object-fit:cover; object-position:center top;">
         </div>
-        <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 24px; font-weight: 800; color: var(--azul); margin-bottom: 4px;">Eng. Alexsandro Salla</h3>
-        <p style="color: var(--amarelo-dark); font-weight: 700; font-size: 14px; margin-bottom: 4px;">Engenheiro Eletricista</p>
-        <p style="color: var(--texto-muted); font-size: 13px; margin-bottom: 20px;">CREA-PR 212335/D</p>
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-          <div style="display: flex; align-items: center; gap: 10px; background: white; border-radius: 10px; padding: 12px 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D2B5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            <span style="font-size: 14px; font-weight: 600; color: var(--texto);">Especialista em Energia Solar</span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 10px; background: white; border-radius: 10px; padding: 12px 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D2B5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            <span style="font-size: 14px; font-weight: 600; color: var(--texto);">Pós-graduado em Gestão de Projetos</span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 10px; background: white; border-radius: 10px; padding: 12px 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D2B5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            <span style="font-size: 14px; font-weight: 600; color: var(--texto);">Termografista Certificado</span>
-          </div>
+        <h3 style="font-family:'Barlow Condensed',sans-serif; font-size:24px; font-weight:800; color:var(--azul); margin-bottom:4px;">Eng. Alexsandro Salla</h3>
+        <p style="color:var(--amarelo-dark); font-weight:700; font-size:14px; margin-bottom:4px;">Engenheiro Eletricista</p>
+        <p style="color:var(--texto-muted); font-size:13px; margin-bottom:20px;">CREA-PR 212335/D</p>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; align-items:center; gap:10px; background:white; border-radius:10px; padding:12px 16px; box-shadow:0 2px 12px rgba(0,0,0,0.06);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D2B5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span style="font-size:14px; font-weight:600; color:var(--texto);">Especialista em Energia Solar</span></div>
+          <div style="display:flex; align-items:center; gap:10px; background:white; border-radius:10px; padding:12px 16px; box-shadow:0 2px 12px rgba(0,0,0,0.06);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D2B5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span style="font-size:14px; font-weight:600; color:var(--texto);">Pós-graduado em Gestão de Projetos</span></div>
+          <div style="display:flex; align-items:center; gap:10px; background:white; border-radius:10px; padding:12px 16px; box-shadow:0 2px 12px rgba(0,0,0,0.06);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D2B5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg><span style="font-size:14px; font-weight:600; color:var(--texto);">Termografista Certificado</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="section faq">
+  <div class="section-header">
+    <span class="section-label">Dúvidas Frequentes</span>
+    <h2>Perguntas mais comuns</h2>
+    <p class="section-desc">Tire suas dúvidas sobre nossos serviços elétricos em Curitiba e região.</p>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <button class="faq-pergunta" onclick="toggleFaq(this)">
+        O orçamento realmente é gratuito?
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-resposta"><p>Sim, 100% gratuito e sem compromisso. Entre em contato pelo WhatsApp ou formulário e retornaremos em até 1 hora útil com uma proposta personalizada para o seu projeto.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-pergunta" onclick="toggleFaq(this)">
+        Vocês emitem ART em todos os serviços?
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-resposta"><p>Sim. A Anotação de Responsabilidade Técnica (ART) é emitida em todos os serviços pelo Eng. Alexsandro Salla, CREA-PR 212335/D. Isso garante segurança jurídica e técnica para o cliente.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-pergunta" onclick="toggleFaq(this)">
+        Quais cidades vocês atendem?
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-resposta"><p>Atendemos toda a Grande Curitiba: Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária, Campo Largo, Fazenda Rio Grande e demais municípios da região metropolitana.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-pergunta" onclick="toggleFaq(this)">
+        Vocês fazem manutenção de inversores de qualquer marca?
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-resposta"><p>Sim. Trabalhamos com as principais marcas do mercado: Sungrow, Growatt, Huawei, Fronius, ABB, WEG e outras. Atendimento em campo ou em bancada, com diagnóstico completo.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-pergunta" onclick="toggleFaq(this)">
+        Qual o prazo para instalação de energia solar?
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-resposta"><p>Depende do porte do sistema, mas instalações residenciais geralmente são concluídas em 1 a 3 dias. O processo de homologação junto à Copel pode levar algumas semanas, conforme o fluxo da concessionária.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ÁREAS -->
 <section class="section areas">
   <div class="section-header">
     <span class="section-label">Área de Atendimento</span>
     <h2>Curitiba e região metropolitana</h2>
-    <p class="section-desc">Atendemos toda a grande Curitiba com agilidade e sem custo de deslocamento adicional.</p>
+    <p class="section-desc">Eletricista em Curitiba, São José dos Pinhais e toda a Grande Curitiba — sem custo adicional de deslocamento.</p>
   </div>
   <div class="areas-grid">
     <div class="area-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Curitiba</div>
@@ -933,14 +652,24 @@
   </div>
 </section>
 
+<!-- CONTATO FINAL -->
 <section class="section contato-final" id="contato">
   <div class="contato-final-inner">
     <div>
       <h2>Pronto para <span>resolver</span> seu problema elétrico?</h2>
-      <p>Entre em contato agora e receba um orçamento gratuito. Atendimento rápido, com responsabilidade técnica e ART em todos os serviços.</p>
+      <p>Entre em contato agora e receba um orçamento gratuito. Atendimento rápido em Curitiba e SJP, com responsabilidade técnica e ART em todos os serviços.</p>
       <div class="contato-opcoes">
+        <a href="https://wa.me/5541987774160?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento." class="contato-opcao" target="_blank">
+          <div class="contato-opcao-icon verde">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div class="contato-opcao-info">
+            <strong>WhatsApp</strong>
+            <span>Enviar mensagem agora — resposta rápida</span>
+          </div>
+        </a>
         <a href="tel:+5541987774160" class="contato-opcao">
-          <div class="contato-opcao-icon azul-c">
+          <div class="contato-opcao-icon amarelo-c">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2z"/></svg>
           </div>
           <div class="contato-opcao-info">
@@ -948,30 +677,14 @@
             <span>Ligar agora — seg a sáb, 8h às 18h</span>
           </div>
         </a>
-        <a href="https://wa.me/5541987774160?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento." class="contato-opcao" target="_blank">
-          <div class="contato-opcao-icon verde">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          </div>
-          <div class="contato-opcao-info">
-            <strong>WhatsApp</strong>
-            <span>Enviar mensagem agora</span>
-          </div>
-        </a>
       </div>
     </div>
-
     <div class="contato-form-card">
       <h3>Orçamento gratuito</h3>
       <p>Preencha e entraremos em contato em até 1 hora útil</p>
       <form onsubmit="enviarFormulario(event)">
-        <div class="form-group">
-          <label>Nome</label>
-          <input type="text" placeholder="Seu nome completo" required>
-        </div>
-        <div class="form-group">
-          <label>Telefone / WhatsApp</label>
-          <input type="tel" placeholder="(41) 99999-9999" required>
-        </div>
+        <div class="form-group"><label>Nome</label><input type="text" placeholder="Seu nome completo" required></div>
+        <div class="form-group"><label>Telefone / WhatsApp</label><input type="tel" placeholder="(41) 99999-9999" required></div>
         <div class="form-group">
           <label>Serviço desejado</label>
           <select required>
@@ -988,10 +701,7 @@
             <option>Outro</option>
           </select>
         </div>
-        <div class="form-group">
-          <label>Mensagem</label>
-          <textarea placeholder="Descreva o que você precisa..."></textarea>
-        </div>
+        <div class="form-group"><label>Mensagem</label><textarea placeholder="Descreva o que você precisa..."></textarea></div>
         <button type="submit" class="btn-form">Solicitar Orçamento →</button>
       </form>
     </div>
@@ -1004,7 +714,7 @@
       <div>
         <div class="footer-logo-name">Salla Energy</div>
         <div class="footer-logo-sub">Engenharia Elétrica</div>
-        <p class="footer-desc">Engenharia elétrica com qualidade, segurança e responsabilidade técnica. Atendemos Curitiba e toda a região metropolitana.</p>
+        <p class="footer-desc">Eletricista em Curitiba e São José dos Pinhais. Engenharia elétrica com qualidade, segurança e responsabilidade técnica em toda a região metropolitana.</p>
       </div>
       <div class="footer-col">
         <h4>Serviços</h4>
@@ -1019,7 +729,6 @@
       <div class="footer-col">
         <h4>Contato</h4>
         <a href="tel:+5541987774160">(41) 98777-4160</a>
-        <!-- EMAIL ATUALIZADO -->
         <a href="mailto:alexsallaengenharia@gmail.com">alexsallaengenharia@gmail.com</a>
         <a href="https://www.instagram.com/salla_energy" target="_blank">📸 @salla_energy</a>
         <p>São José dos Pinhais — PR</p>
@@ -1034,16 +743,26 @@
   </div>
 </footer>
 
+<!-- FLOATING CTA -->
 <div class="floating-cta">
-  <a href="tel:+5541987774160" class="floating-btn phone" title="Ligar agora">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2z"/></svg>
-  </a>
-  <a href="https://www.instagram.com/salla_energy" class="floating-btn insta" title="Instagram" target="_blank">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-  </a>
-  <a href="https://wa.me/5541987774160?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento." class="floating-btn whats" title="WhatsApp" target="_blank">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
+  <div class="floating-btn-wrap">
+    <span class="floating-label">Ligar agora</span>
+    <a href="tel:+5541987774160" class="floating-btn phone" title="Ligar agora">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2z"/></svg>
+    </a>
+  </div>
+  <div class="floating-btn-wrap">
+    <span class="floating-label">Instagram</span>
+    <a href="https://www.instagram.com/salla_energy" class="floating-btn insta" title="Instagram" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </a>
+  </div>
+  <div class="floating-btn-wrap">
+    <span class="floating-label">WhatsApp</span>
+    <a href="https://wa.me/5541987774160?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento." class="floating-btn whats" title="WhatsApp" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
 </div>
 
 <script>
@@ -1055,34 +774,26 @@ function enviarFormulario(e) {
   const servico = form.querySelector('select').value;
   const msg = form.querySelector('textarea') ? form.querySelector('textarea').value : '';
   const texto = encodeURIComponent(`Olá! Meu nome é ${nome}.\nTelefone: ${tel}\nServiço: ${servico}\n${msg ? 'Mensagem: ' + msg : ''}`);
-
-  gtag('event', 'conversion', {
-    'send_to': 'AW-18147341908/7626566833',
-    'event_category': 'lead',
-    'event_label': 'formulario_whatsapp'
-  });
-
+  gtag('event', 'conversion', { 'send_to': 'AW-18147341908/7626566833', 'event_category': 'lead', 'event_label': 'formulario_whatsapp' });
   window.open(`https://wa.me/5541987774160?text=${texto}`, '_blank');
+}
+
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
 }
 
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
     link.addEventListener('click', function() {
-      gtag('event', 'conversion', {
-        'send_to': 'AW-18147341908/7626566833',
-        'event_category': 'lead',
-        'event_label': 'clique_whatsapp'
-      });
+      gtag('event', 'conversion', { 'send_to': 'AW-18147341908/7626566833', 'event_category': 'lead', 'event_label': 'clique_whatsapp' });
     });
   });
-
   document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
     link.addEventListener('click', function() {
-      gtag('event', 'conversion', {
-        'send_to': 'AW-18147341908/7626566833',
-        'event_category': 'lead',
-        'event_label': 'clique_telefone'
-      });
+      gtag('event', 'conversion', { 'send_to': 'AW-18147341908/7626566833', 'event_category': 'lead', 'event_label': 'clique_telefone' });
     });
   });
 });
