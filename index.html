@@ -775,6 +775,7 @@ function enviarFormulario(e) {
   const msg = form.querySelector('textarea') ? form.querySelector('textarea').value : '';
   const texto = encodeURIComponent(`Olá! Meu nome é ${nome}.\nTelefone: ${tel}\nServiço: ${servico}\n${msg ? 'Mensagem: ' + msg : ''}`);
   gtag('event', 'conversion', { 'send_to': 'AW-18147341908/7626566833', 'event_category': 'lead', 'event_label': 'formulario_whatsapp' });
+  gtag('event', 'whatsapp_click', { 'event_category': 'contato', 'event_label': 'formulario_whatsapp' });
   window.open(`https://wa.me/5541987774160?text=${texto}`, '_blank');
 }
 
@@ -789,6 +790,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
     link.addEventListener('click', function() {
       gtag('event', 'conversion', { 'send_to': 'AW-18147341908/7626566833', 'event_category': 'lead', 'event_label': 'clique_whatsapp' });
+      gtag('event', 'whatsapp_click', { 'event_category': 'contato', 'event_label': 'clique_whatsapp' });
     });
   });
   document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
