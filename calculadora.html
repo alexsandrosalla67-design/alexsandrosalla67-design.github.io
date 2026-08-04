@@ -83,6 +83,12 @@
     padding: 12px 16px; width: 100%; cursor: pointer; margin-top: 8px;
   }
   .btn-salvar:hover { background: #e0a800; }
+  .btn-whats {
+    font-family: 'Archivo', sans-serif; font-size: 14px; font-weight: 700;
+    background: #25D366; color: #fff; border: none; border-radius: 10px;
+    padding: 12px 16px; width: 100%; cursor: pointer; margin-top: 8px;
+  }
+  .btn-whats:hover { background: #1eb959; }
   .lista-wrap { max-width: 1100px; margin: 24px auto 0; background: #fff; border-radius: 14px; padding: 18px; border: 1px solid #E3E8F0; box-shadow: 0 1px 3px rgba(14,42,71,.08); }
   .lista-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
   .lista-header h2 { margin: 0; font-size: 16px; font-weight: 700; }
@@ -97,6 +103,7 @@
   .tabela-clientes td { padding: 8px 10px; border-bottom: 1px solid #EDF1F7; }
   .tabela-clientes tr:hover td { background: #FCFDFF; }
   .tabela-clientes .del { color: #C0392B; cursor: pointer; font-weight: 700; border: none; background: none; font-size: 15px; }
+  .tabela-clientes .reabrir { color: #0E7C4A; cursor: pointer; font-weight: 700; border: none; background: none; font-size: 14px; }
   .lista-vazia { font-size: 13px; color: #8FA3BC; text-align: center; padding: 20px; }
   .btn-print {
     font-family: 'Archivo', sans-serif; font-size: 14px; font-weight: 700;
@@ -111,6 +118,8 @@
     header, .grid, footer, .btn-print, .lista-wrap { display: none !important; }
     #folha { display: block; max-width: 100%; color: #12233A; }
     #folha .topo { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 3px solid #F5B800; padding-bottom: 12px; margin-bottom: 20px; }
+    #folha .topo-esq { display: flex; align-items: flex-start; gap: 14px; }
+    #folha .logo-img { max-height: 60px; max-width: 140px; object-fit: contain; }
     #folha h1 { font-size: 22px; margin: 2px 0 0; }
     #folha .brand { font-size: 13px; }
     #folha .data { font-size: 12px; color: #5B6B80; text-align: right; }
@@ -272,8 +281,17 @@
   <section class="card">
     <h2>3 · Valor da instalação</h2>
     <div class="params">
-      <label class="param"><span>R$ / kWp</span><input type="number" step="50" id="precoKwp" value="2800"></label>
+      <label class="param"><span>R$/kWp até 5 kWp</span><input type="number" step="50" id="preco1" value="4500"></label>
+      <label class="param"><span>R$/kWp 5 a 10 kWp</span><input type="number" step="50" id="preco2" value="4000"></label>
+      <label class="param"><span>R$/kWp acima 10 kWp</span><input type="number" step="50" id="preco3" value="3500"></label>
       <label class="param"><span>Tarifa (R$/kWh)</span><input type="number" step="0.01" id="tarifa" value="0.95"></label>
+      <label class="param full"><span>Tipo de ligação (custo de disponibilidade)</span>
+        <select id="ligacao">
+          <option value="30">Monofásica (30 kWh)</option>
+          <option value="50">Bifásica (50 kWh)</option>
+          <option value="100">Trifásica (100 kWh)</option>
+        </select>
+      </label>
       <label class="param full"><span>Valor negociado (opcional — substitui o cálculo)</span>
         <input type="number" step="100" id="valorManual" placeholder="Deixe vazio p/ usar R$/kWp">
       </label>
@@ -298,6 +316,7 @@
         </label>
       </div>
       <button class="btn-print" onclick="imprimir()">🖨️ Imprimir proposta</button>
+      <button class="btn-whats" onclick="enviarWhats()">📱 Enviar no WhatsApp</button>
       <button class="btn-salvar" onclick="salvarCliente()">💾 Salvar cliente na lista</button>
     </div>
   </section>
@@ -334,10 +353,14 @@
 <!-- Folha que sai na impressão -->
 <div id="folha">
   <div class="topo">
-    <div>
-      <div class="brand">SALLA ENERGY</div>
-      <h1>Proposta Comercial — Sistema Fotovoltaico</h1>
-      <div id="fCliente" style="font-size:14px;margin-top:4px"></div>
+    <div class="topo-esq">
+      <img id="logoProposta" src="logo.png" alt="" class="logo-img"
+           onerror="this.style.display='none'">
+      <div>
+        <div class="brand">SALLA ENERGY</div>
+        <h1>Proposta Comercial — Sistema Fotovoltaico</h1>
+        <div id="fCliente" style="font-size:14px;margin-top:4px"></div>
+      </div>
     </div>
     <div class="data" id="fData"></div>
   </div>
@@ -515,7 +538,12 @@ function calcular() {
   $("invLinha").classList.toggle("oculto", !inv);
   if (inv) $("invDado").textContent = inv;
 
-  const preco = parseFloat($("precoKwp").value) || 0;
+  // preço por faixa de tamanho do sistema
+  let preco;
+  if (kwpInst <= 5) preco = parseFloat($("preco1").value) || 0;
+  else if (kwpInst <= 10) preco = parseFloat($("preco2").value) || 0;
+  else preco = parseFloat($("preco3").value) || 0;
+
   const valorCalc = kwpInst * preco;
   const manual = parseFloat($("valorManual").value);
   const valorFinal = manual > 0 ? manual : valorCalc;
@@ -524,8 +552,12 @@ function calcular() {
   $("valorNota").classList.toggle("oculto", !(manual > 0));
   if (manual > 0) $("valorNota").textContent = "tabela: " + brl(valorCalc);
 
+  // economia: solar não zera o custo de disponibilidade (mín. da concessionária)
   const tarifa = parseFloat($("tarifa").value) || 0;
-  const econ = Math.min(geracao, media) * tarifa;
+  const dispKwh = parseFloat($("ligacao").value) || 30;
+  // consumo que ainda será pago à concessionária (o mínimo)
+  const consumoAbativel = Math.max(media - dispKwh, 0);
+  const econ = Math.min(geracao, consumoAbativel) * tarifa;
   $("economia").textContent = brl(econ) + "/mês";
   const pbMeses = econ > 0 ? valorFinal / econ : 0;
   $("payback").textContent = pbMeses > 0
@@ -559,6 +591,35 @@ function imprimir() {
   $("fValor").textContent = $("valorFinal").textContent;
   montarGrafico();
   window.print();
+}
+
+function enviarWhats() {
+  if ($("mediaValor").textContent === "0" || $("nMod").textContent === "—") {
+    alert("Preencha o consumo do cliente primeiro para gerar a proposta."); return;
+  }
+  const nome = $("cliente").value.trim();
+  const inv = $("inversor").value;
+  const msg =
+    `*SALLA ENERGY — Proposta Solar*%0A%0A` +
+    (nome ? `Cliente: ${nome}%0A` : ``) +
+    `Consumo médio: ${$("mediaValor").textContent} kWh/mês%0A` +
+    `Sistema: ${$("kwpInst").textContent} (${$("nMod").textContent})%0A` +
+    `Módulos de ${$("modulo").value} W%0A` +
+    (inv ? `Inversor: ${inv}%0A` : ``) +
+    `Telhado: ${$("oriDado").textContent}%0A` +
+    `Geração estimada: ${$("geracao").textContent}%0A` +
+    `Economia: ${$("economia").textContent}%0A` +
+    `Retorno (payback): ${$("payback").textContent}%0A%0A` +
+    `*Investimento: ${$("valorFinal").textContent}*%0A%0A` +
+    `_Estimativa comercial. Valores sujeitos a projeto técnico e homologação._`;
+
+  // limpa o telefone deixando só números; adiciona 55 (Brasil) se preciso
+  let tel = ($("telefone").value || "").replace(/\D/g, "");
+  if (tel && tel.length <= 11) tel = "55" + tel;
+  const url = tel
+    ? `https://wa.me/${tel}?text=${msg}`
+    : `https://wa.me/?text=${msg}`;
+  window.open(url, "_blank");
 }
 
 function montarGrafico() {
@@ -607,6 +668,19 @@ function salvarCliente() {
     inversor: $("inversor").value || "a definir",
     telhado: $("oriDado").textContent,
     valor: $("valorFinal").textContent,
+    // dados de entrada p/ reabrir a proposta depois
+    _in: {
+      modo: modo,
+      meses: [...document.querySelectorAll("[data-mes]")].map(i => i.value),
+      valorConta: $("valorConta").value,
+      tarifaConta: $("tarifaConta").value,
+      modulo: $("modulo").value,
+      inversor: $("inversor").value,
+      orientacao: $("orientacao").value,
+      mN: $("mN").value, mL: $("mL").value, mO: $("mO").value, mS: $("mS").value,
+      ligacao: $("ligacao").value,
+      valorManual: $("valorManual").value,
+    }
   };
   const lista = lerClientes();
   lista.unshift(reg); // mais recente primeiro
@@ -622,6 +696,31 @@ function excluirCliente(i) {
   lista.splice(i, 1);
   gravarClientes(lista);
   renderTabela();
+}
+
+function reabrirCliente(i) {
+  const lista = lerClientes();
+  const c = lista[i];
+  if (!c || !c._in) { alert("Este registro não tem dados para reabrir."); return; }
+  const d = c._in;
+  // restaura contato
+  $("cliente").value = c.nome || "";
+  $("telefone").value = c.telefone || "";
+  $("endereco").value = c.endereco || "";
+  // restaura entradas
+  const meses = document.querySelectorAll("[data-mes]");
+  (d.meses || []).forEach((v, k) => { if (meses[k]) meses[k].value = v; });
+  $("valorConta").value = d.valorConta || "";
+  $("tarifaConta").value = d.tarifaConta || "0.95";
+  $("modulo").value = d.modulo || "610";
+  $("inversor").value = d.inversor || "";
+  $("orientacao").value = d.orientacao || "1.00";
+  $("mN").value = d.mN || ""; $("mL").value = d.mL || "";
+  $("mO").value = d.mO || ""; $("mS").value = d.mS || "";
+  $("ligacao").value = d.ligacao || "30";
+  $("valorManual").value = d.valorManual || "";
+  setModo(d.modo || "kwh"); // já chama calcular()
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function limparTudo() {
@@ -644,7 +743,8 @@ function renderTabela() {
       `<td>${c.endereco||"—"}</td><td>${c.consumo}</td><td>${c.kwp}</td>` +
       `<td>${c.modulos}</td><td>${c.inversor}</td><td>${c.telhado}</td>` +
       `<td>${c.valor}</td>` +
-      `<td><button class="del" onclick="excluirCliente(${i})" title="Excluir">×</button></td>`;
+      `<td><button class="reabrir" onclick="reabrirCliente(${i})" title="Reabrir proposta">✎</button> ` +
+      `<button class="del" onclick="excluirCliente(${i})" title="Excluir">×</button></td>`;
     corpo.appendChild(tr);
   });
 }
