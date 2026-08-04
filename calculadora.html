@@ -67,6 +67,14 @@
   .vazio { font-size: 13px; color: #5B6B80; background: #F2F4F8; border-radius: 10px; padding: 14px; text-align: center; }
   footer { max-width: 1100px; margin: 24px auto 0; font-size: 11px; color: #8FA3BC; text-align: center; }
   .oculto { display: none; }
+  .toggle { display: flex; gap: 6px; background: #EDF1F7; padding: 4px; border-radius: 10px; margin-bottom: 12px; }
+  .toggle button {
+    flex: 1; font-family: 'Archivo', sans-serif; font-size: 13px; font-weight: 700;
+    border: none; background: transparent; color: #5B6B80; padding: 8px; border-radius: 7px; cursor: pointer;
+  }
+  .toggle button.ativo { background: #fff; color: #0E2A47; box-shadow: 0 1px 2px rgba(14,42,71,.12); }
+  .conta-box { display: flex; flex-direction: column; gap: 3px; }
+  .conta-box > span { font-size: 11px; font-weight: 700; color: #5B6B80; }
   .btn-print {
     font-family: 'Archivo', sans-serif; font-size: 14px; font-weight: 700;
     background: #0E2A47; color: #fff; border: none; border-radius: 10px;
@@ -90,7 +98,15 @@
     #folha .destaque { background: #0E2A47; color: #fff; border-radius: 10px; padding: 16px 20px; margin-top: 18px; display: flex; justify-content: space-between; align-items: center; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     #folha .destaque .valor { font-family: 'IBM Plex Mono', monospace; font-size: 26px; font-weight: 600; color: #F5B800; }
     #folha .rodape { margin-top: 24px; font-size: 10px; color: #8FA3BC; border-top: 1px solid #E3E8F0; padding-top: 8px; }
+    #folha .grafico { display: flex; align-items: flex-end; gap: 4px; height: 120px; margin: 10px 0 4px; padding-bottom: 2px; }
+    #folha .col { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
+    #folha .col .barra { width: 100%; background: #F5B800; border-radius: 3px 3px 0 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    #folha .col .kwh { font-size: 8px; color: #5B6B80; margin-bottom: 2px; font-family: 'IBM Plex Mono', monospace; }
+    #folha .col .mes { font-size: 9px; color: #5B6B80; margin-top: 3px; font-weight: 700; }
+    #folha .graf-legenda { font-size: 10px; color: #5B6B80; }
   }
+  /* gráfico também visível na tela, dentro da folha oculta não conta */
+  .g-col .barra { background: #F5B800; }
 </style>
 </head>
 <body>
@@ -108,9 +124,32 @@
 
   <!-- 1. Consumo -->
   <section class="card">
-    <h2>1 · Histórico de consumo (kWh/mês)</h2>
-    <p class="hint">Preencha os meses que tiver da fatura. A média usa só os campos preenchidos.</p>
-    <div class="meses" id="meses"></div>
+    <h2>1 · Consumo do cliente</h2>
+    <div class="toggle">
+      <button id="btnKwh" class="ativo" onclick="setModo('kwh')">Por kWh (fatura)</button>
+      <button id="btnReais" onclick="setModo('reais')">Por R$ (rápido)</button>
+    </div>
+
+    <!-- Modo kWh -->
+    <div id="modoKwh">
+      <p class="hint">Preencha os meses que tiver da fatura. A média usa só os campos preenchidos.</p>
+      <div class="meses" id="meses"></div>
+    </div>
+
+    <!-- Modo R$ -->
+    <div id="modoReais" class="oculto">
+      <p class="hint">O cliente não sabe os kWh? Coloque só o valor médio da conta.</p>
+      <div class="params">
+        <label class="conta-box"><span>Valor da conta (R$/mês)</span>
+          <input type="number" step="10" id="valorConta" placeholder="Ex.: 500">
+        </label>
+        <label class="conta-box"><span>Tarifa (R$/kWh)</span>
+          <input type="number" step="0.01" id="tarifaConta" value="0.95">
+        </label>
+      </div>
+      <p class="hint" style="margin-top:8px">Descontamos ~R$ 50 de custo fixo (taxas que a solar não zera) antes de estimar o consumo.</p>
+    </div>
+
     <div class="media-box oculto" id="mediaBox">
       <div class="mini-label" id="mediaLabel">MÉDIA MENSAL</div>
       <div class="media-valor"><span id="mediaValor">0</span> <small>kWh</small></div>
@@ -123,12 +162,33 @@
     <div class="params">
       <label class="param"><span>HSP (h/dia)</span><input type="number" step="0.1" id="hsp" value="4.5"></label>
       <label class="param"><span>Perf. Ratio</span><input type="number" step="0.01" id="pr" value="0.80"></label>
-      <label class="param full"><span>Módulo</span>
+      <label class="param full"><span>Potência do módulo (W)</span>
         <select id="modulo">
-          <option value="625">LONGi 625 W</option>
-          <option value="610" selected>Hanersun 610 W</option>
-          <option value="585">Genérico 585 W</option>
-          <option value="550">Genérico 550 W</option>
+          <option value="450">450 W</option>
+          <option value="500">500 W</option>
+          <option value="550">550 W</option>
+          <option value="575">575 W</option>
+          <option value="585">585 W</option>
+          <option value="600">600 W</option>
+          <option value="610" selected>610 W</option>
+          <option value="625">625 W</option>
+          <option value="650">650 W</option>
+          <option value="700">700 W</option>
+        </select>
+      </label>
+      <label class="param full"><span>Marca do inversor (opcional)</span>
+        <select id="inversor">
+          <option value="">— a definir —</option>
+          <option value="Growatt">Growatt</option>
+          <option value="Deye">Deye</option>
+          <option value="WEG">WEG</option>
+          <option value="Huawei">Huawei</option>
+          <option value="Fronius">Fronius</option>
+          <option value="Sungrow">Sungrow</option>
+          <option value="Solis">Solis</option>
+          <option value="Goodwe">Goodwe</option>
+          <option value="Hoymiles">Hoymiles (micro)</option>
+          <option value="APsystems">APsystems (micro)</option>
         </select>
       </label>
     </div>
@@ -137,6 +197,7 @@
       <div class="linha"><span>Potência necessária</span><strong id="kwpNec">—</strong></div>
       <div class="linha"><span id="modLabel">Módulos</span><strong id="nMod">—</strong></div>
       <div class="linha dest"><span>Kit instalado</span><strong id="kwpInst">—</strong></div>
+      <div class="linha oculto" id="invLinha"><span>Inversor</span><strong id="invDado">—</strong></div>
       <div class="linha"><span>Geração estimada</span><strong id="geracao">—</strong></div>
     </div>
   </section>
@@ -191,9 +252,14 @@
   <div class="secao">Sistema proposto</div>
   <table>
     <tr><td id="fModLabel">Módulos fotovoltaicos</td><td id="fMod">—</td></tr>
+    <tr id="fInvLinha"><td>Marca do inversor</td><td id="fInv">—</td></tr>
     <tr><td>Potência instalada</td><td id="fKwp">—</td></tr>
     <tr><td>Geração estimada</td><td id="fGer">—</td></tr>
   </table>
+
+  <div class="secao">Geração estimada ao longo do ano</div>
+  <div class="graf-legenda">Produção mensal em kWh — maior no verão, menor no inverno (perfil Sul do Brasil).</div>
+  <div class="grafico" id="fGrafico"></div>
 
   <div class="secao">Retorno</div>
   <table>
@@ -214,6 +280,9 @@
 
 <script>
 const MESES = ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"];
+// Fator de geração relativo à média mensal (perfil irradiação Sul do Brasil / Curitiba)
+// Verão gera acima de 1, inverno abaixo. Média dos 12 = 1,00
+const FATOR_MES = [1.25, 1.18, 1.10, 0.95, 0.82, 0.72, 0.78, 0.90, 0.92, 1.10, 1.18, 1.10];
 const $ = id => document.getElementById(id);
 
 const brl = v => v.toLocaleString("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0});
@@ -228,16 +297,51 @@ MESES.forEach((m,i) => {
   mesesDiv.appendChild(l);
 });
 
-function calcular() {
-  const vals = [...document.querySelectorAll("[data-mes]")]
-    .map(i => parseFloat(i.value.replace(",", ".")))
-    .filter(n => !isNaN(n) && n > 0);
+let modo = "kwh"; // "kwh" ou "reais"
+let geracaoMedia = 0; // guarda a geração média p/ montar o gráfico
+const CUSTO_FIXO = 50; // R$ que a solar não elimina (disponibilidade, ilum. pública)
 
+function setModo(m) {
+  modo = m;
+  $("btnKwh").classList.toggle("ativo", m === "kwh");
+  $("btnReais").classList.toggle("ativo", m === "reais");
+  $("modoKwh").classList.toggle("oculto", m !== "kwh");
+  $("modoReais").classList.toggle("oculto", m !== "reais");
+  calcular();
+}
+
+function calcular() {
   const hsp = parseFloat($("hsp").value) || 4.5;
   const pr = parseFloat($("pr").value) || 0.8;
   $("badge").textContent = `PR · HSP ${hsp}`;
 
-  const temDados = vals.length > 0;
+  let media = 0;
+  let temDados = false;
+  let rotuloMedia = "MÉDIA MENSAL";
+
+  if (modo === "kwh") {
+    const vals = [...document.querySelectorAll("[data-mes]")]
+      .map(i => parseFloat(i.value.replace(",", ".")))
+      .filter(n => !isNaN(n) && n > 0);
+    temDados = vals.length > 0;
+    if (temDados) {
+      media = vals.reduce((a,b) => a+b, 0) / vals.length;
+      rotuloMedia = `MÉDIA MENSAL · ${vals.length} ${vals.length===1?"MÊS":"MESES"}`;
+    }
+  } else {
+    // modo R$: converte valor da conta em kWh
+    const valorConta = parseFloat($("valorConta").value);
+    const tarifaConta = parseFloat($("tarifaConta").value) || 0.95;
+    temDados = valorConta > 0 && tarifaConta > 0;
+    if (temDados) {
+      const valorEnergia = Math.max(valorConta - CUSTO_FIXO, 0);
+      media = valorEnergia / tarifaConta;
+      rotuloMedia = `CONSUMO ESTIMADO · R$ ${valorConta.toFixed(0)}/mês`;
+      // sincroniza a tarifa do card 3 com a informada aqui
+      $("tarifa").value = tarifaConta;
+    }
+  }
+
   $("mediaBox").classList.toggle("oculto", !temDados);
   $("kitBox").classList.toggle("oculto", !temDados);
   $("kitVazio").classList.toggle("oculto", temDados);
@@ -245,8 +349,7 @@ function calcular() {
   $("finBox").classList.toggle("oculto", !temDados);
   if (!temDados) return;
 
-  const media = vals.reduce((a,b) => a+b, 0) / vals.length;
-  $("mediaLabel").textContent = `MÉDIA MENSAL · ${vals.length} ${vals.length===1?"MÊS":"MESES"}`;
+  $("mediaLabel").textContent = rotuloMedia;
   $("mediaValor").textContent = num(media, 0);
 
   // kWp = consumo mensal / (HSP × 30 × PR)
@@ -255,12 +358,17 @@ function calcular() {
   const nMod = Math.ceil(kwpNec * 1000 / modW);
   const kwpInst = nMod * modW / 1000;
   const geracao = kwpInst * hsp * 30 * pr;
+  geracaoMedia = geracao;
 
   $("kwpNec").textContent = num(kwpNec) + " kWp";
   $("modLabel").textContent = `Módulos de ${modW} W`;
   $("nMod").textContent = nMod + " un";
   $("kwpInst").textContent = num(kwpInst) + " kWp";
   $("geracao").textContent = num(geracao, 0) + " kWh/mês";
+
+  const inv = $("inversor").value;
+  $("invLinha").classList.toggle("oculto", !inv);
+  if (inv) $("invDado").textContent = inv;
 
   const preco = parseFloat($("precoKwp").value) || 0;
   const valorCalc = kwpInst * preco;
@@ -289,12 +397,34 @@ function imprimir() {
   $("fMedia").textContent = $("mediaValor").textContent + " kWh/mês";
   $("fModLabel").textContent = $("modLabel").textContent;
   $("fMod").textContent = $("nMod").textContent;
+  const invSel = $("inversor").value;
+  $("fInvLinha").style.display = invSel ? "" : "none";
+  $("fInv").textContent = invSel || "—";
   $("fKwp").textContent = $("kwpInst").textContent;
   $("fGer").textContent = $("geracao").textContent;
   $("fEcon").textContent = $("economia").textContent;
   $("fPay").textContent = $("payback").textContent;
   $("fValor").textContent = $("valorFinal").textContent;
+  montarGrafico();
   window.print();
+}
+
+function montarGrafico() {
+  const cont = $("fGrafico");
+  cont.innerHTML = "";
+  // gera valores por mês e acha o máximo p/ escalar as barras
+  const valores = FATOR_MES.map(f => geracaoMedia * f);
+  const maxVal = Math.max(...valores);
+  valores.forEach((v, i) => {
+    const altura = maxVal > 0 ? (v / maxVal) * 100 : 0;
+    const col = document.createElement("div");
+    col.className = "col";
+    col.innerHTML =
+      `<span class="kwh">${Math.round(v)}</span>` +
+      `<div class="barra" style="height:${altura}%"></div>` +
+      `<span class="mes">${MESES[i]}</span>`;
+    cont.appendChild(col);
+  });
 }
 </script>
 </body>
