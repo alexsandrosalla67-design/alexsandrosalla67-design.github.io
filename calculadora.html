@@ -75,6 +75,29 @@
   .toggle button.ativo { background: #fff; color: #0E2A47; box-shadow: 0 1px 2px rgba(14,42,71,.12); }
   .conta-box { display: flex; flex-direction: column; gap: 3px; }
   .conta-box > span { font-size: 11px; font-weight: 700; color: #5B6B80; }
+  .custom-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 4px; }
+  .dados-cliente { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+  .btn-salvar {
+    font-family: 'Archivo', sans-serif; font-size: 14px; font-weight: 700;
+    background: #F5B800; color: #12233A; border: none; border-radius: 10px;
+    padding: 12px 16px; width: 100%; cursor: pointer; margin-top: 8px;
+  }
+  .btn-salvar:hover { background: #e0a800; }
+  .lista-wrap { max-width: 1100px; margin: 24px auto 0; background: #fff; border-radius: 14px; padding: 18px; border: 1px solid #E3E8F0; box-shadow: 0 1px 3px rgba(14,42,71,.08); }
+  .lista-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+  .lista-header h2 { margin: 0; font-size: 16px; font-weight: 700; }
+  .lista-acoes { display: flex; gap: 8px; }
+  .btn-excel { font-family: 'Archivo', sans-serif; font-size: 13px; font-weight: 700; background: #0E7C4A; color: #fff; border: none; border-radius: 8px; padding: 9px 14px; cursor: pointer; }
+  .btn-excel:hover { background: #0a6e40; }
+  .btn-limpar { font-family: 'Archivo', sans-serif; font-size: 13px; font-weight: 700; background: transparent; color: #C0392B; border: 1px solid #E3B4AE; border-radius: 8px; padding: 9px 14px; cursor: pointer; }
+  .btn-limpar:hover { background: #FDECEA; }
+  .tabela-scroll { overflow-x: auto; }
+  .tabela-clientes { width: 100%; border-collapse: collapse; font-size: 12px; white-space: nowrap; }
+  .tabela-clientes th { text-align: left; padding: 8px 10px; background: #F2F4F8; color: #5B6B80; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: .03em; }
+  .tabela-clientes td { padding: 8px 10px; border-bottom: 1px solid #EDF1F7; }
+  .tabela-clientes tr:hover td { background: #FCFDFF; }
+  .tabela-clientes .del { color: #C0392B; cursor: pointer; font-weight: 700; border: none; background: none; font-size: 15px; }
+  .lista-vazia { font-size: 13px; color: #8FA3BC; text-align: center; padding: 20px; }
   .btn-print {
     font-family: 'Archivo', sans-serif; font-size: 14px; font-weight: 700;
     background: #0E2A47; color: #fff; border: none; border-radius: 10px;
@@ -191,12 +214,55 @@
           <option value="APsystems">APsystems (micro)</option>
         </select>
       </label>
+      <label class="param full"><span>Orientação do telhado (água)</span>
+        <select id="orientacao">
+          <optgroup label="Água única">
+            <option value="1.00" data-label="Norte">Norte (ideal)</option>
+            <option value="0.90" data-label="Leste">Leste</option>
+            <option value="0.88" data-label="Oeste">Oeste</option>
+            <option value="0.78" data-label="Sul">Sul</option>
+          </optgroup>
+          <optgroup label="Duas águas">
+            <option value="0.95" data-label="Norte + Leste">Norte + Leste</option>
+            <option value="0.94" data-label="Norte + Oeste">Norte + Oeste</option>
+            <option value="0.89" data-label="Norte + Sul">Norte + Sul</option>
+            <option value="0.89" data-label="Leste + Oeste">Leste + Oeste</option>
+            <option value="0.84" data-label="Leste + Sul">Leste + Sul</option>
+            <option value="0.83" data-label="Oeste + Sul">Oeste + Sul</option>
+          </optgroup>
+          <optgroup label="Três águas">
+            <option value="0.927" data-label="Norte + Leste + Oeste">Norte + Leste + Oeste</option>
+            <option value="0.893" data-label="Norte + Leste + Sul">Norte + Leste + Sul</option>
+            <option value="0.887" data-label="Norte + Oeste + Sul">Norte + Oeste + Sul</option>
+            <option value="0.853" data-label="Leste + Oeste + Sul">Leste + Oeste + Sul</option>
+          </optgroup>
+          <optgroup label="Quatro águas">
+            <option value="0.89" data-label="Norte + Leste + Oeste + Sul">Todas as 4 águas</option>
+          </optgroup>
+          <optgroup label="Manual">
+            <option value="custom" data-label="Personalizado">Personalizado (nº de módulos por lado)</option>
+          </optgroup>
+        </select>
+      </label>
+
+      <!-- Distribuição personalizada de módulos por orientação -->
+      <div class="param full oculto" id="customBox">
+        <span style="font-size:11px;font-weight:700;color:#5B6B80">Módulos por lado (deixe 0 onde não houver)</span>
+        <div class="custom-grid">
+          <label class="conta-box"><span>Norte</span><input type="number" min="0" step="1" id="mN" placeholder="0"></label>
+          <label class="conta-box"><span>Leste</span><input type="number" min="0" step="1" id="mL" placeholder="0"></label>
+          <label class="conta-box"><span>Oeste</span><input type="number" min="0" step="1" id="mO" placeholder="0"></label>
+          <label class="conta-box"><span>Sul</span><input type="number" min="0" step="1" id="mS" placeholder="0"></label>
+        </div>
+        <p class="hint" style="margin-top:6px" id="customResumo">Total: 0 módulos · fator médio —</p>
+      </div>
     </div>
-    <div class="vazio" id="kitVazio">Preencha ao menos um mês de consumo para dimensionar o kit.</div>
+    <div class="vazio" id="kitVazio">Preencha o consumo do cliente para dimensionar o kit.</div>
     <div class="kit oculto" id="kitBox">
       <div class="linha"><span>Potência necessária</span><strong id="kwpNec">—</strong></div>
       <div class="linha"><span id="modLabel">Módulos</span><strong id="nMod">—</strong></div>
       <div class="linha dest"><span>Kit instalado</span><strong id="kwpInst">—</strong></div>
+      <div class="linha"><span>Orientação</span><strong id="oriDado">—</strong></div>
       <div class="linha oculto" id="invLinha"><span>Inversor</span><strong id="invDado">—</strong></div>
       <div class="linha"><span>Geração estimada</span><strong id="geracao">—</strong></div>
     </div>
@@ -220,13 +286,45 @@
     <div class="kit oculto" id="finBox">
       <div class="linha"><span>Economia estimada</span><strong id="economia">—</strong></div>
       <div class="linha"><span>Payback simples</span><strong id="payback">—</strong></div>
-      <label class="param" style="margin-top:12px"><span>Nome do cliente (para a proposta)</span>
-        <input type="text" id="cliente" placeholder="Ex.: João da Silva">
-      </label>
+      <div class="dados-cliente">
+        <label class="conta-box"><span>Nome do cliente</span>
+          <input type="text" id="cliente" placeholder="Ex.: João da Silva">
+        </label>
+        <label class="conta-box"><span>Telefone</span>
+          <input type="text" id="telefone" placeholder="(41) 9____-____">
+        </label>
+        <label class="conta-box"><span>Endereço</span>
+          <input type="text" id="endereco" placeholder="Rua, nº, bairro, cidade">
+        </label>
+      </div>
       <button class="btn-print" onclick="imprimir()">🖨️ Imprimir proposta</button>
+      <button class="btn-salvar" onclick="salvarCliente()">💾 Salvar cliente na lista</button>
     </div>
   </section>
 
+</div>
+
+<!-- Lista de clientes salvos -->
+<div class="lista-wrap" id="listaWrap">
+  <div class="lista-header">
+    <h2>Clientes salvos (<span id="qtdClientes">0</span>)</h2>
+    <div class="lista-acoes">
+      <button class="btn-excel" onclick="exportarExcel()">📊 Exportar Excel</button>
+      <button class="btn-limpar" onclick="limparTudo()">Limpar tudo</button>
+    </div>
+  </div>
+  <div class="tabela-scroll">
+    <table class="tabela-clientes" id="tabelaClientes">
+      <thead>
+        <tr>
+          <th>Data</th><th>Cliente</th><th>Telefone</th><th>Endereço</th>
+          <th>Consumo</th><th>kWp</th><th>Módulos</th><th>Inversor</th><th>Telhado</th><th>Valor</th><th></th>
+        </tr>
+      </thead>
+      <tbody id="corpoTabela"></tbody>
+    </table>
+  </div>
+  <div class="lista-vazia" id="listaVazia">Nenhum cliente salvo ainda. Preencha uma proposta e clique em "Salvar cliente na lista".</div>
 </div>
 
 <footer>
@@ -252,6 +350,7 @@
   <div class="secao">Sistema proposto</div>
   <table>
     <tr><td id="fModLabel">Módulos fotovoltaicos</td><td id="fMod">—</td></tr>
+    <tr><td>Orientação do telhado</td><td id="fOri">—</td></tr>
     <tr id="fInvLinha"><td>Marca do inversor</td><td id="fInv">—</td></tr>
     <tr><td>Potência instalada</td><td id="fKwp">—</td></tr>
     <tr><td>Geração estimada</td><td id="fGer">—</td></tr>
@@ -352,12 +451,57 @@ function calcular() {
   $("mediaLabel").textContent = rotuloMedia;
   $("mediaValor").textContent = num(media, 0);
 
-  // kWp = consumo mensal / (HSP × 30 × PR)
-  const kwpNec = media / (hsp * 30 * pr);
+  // orientação do telhado
+  const oriValor = $("orientacao").value;
+  const ehCustom = oriValor === "custom";
+  $("customBox").classList.toggle("oculto", !ehCustom);
+
   const modW = parseInt($("modulo").value);
-  const nMod = Math.ceil(kwpNec * 1000 / modW);
+  const FAT = { N: 1.00, L: 0.90, O: 0.88, S: 0.78 };
+
+  let fOri, nMod, kwpNec, oriLabel, perda;
+
+  if (ehCustom) {
+    // modo personalizado: o usuário define quantos módulos em cada lado
+    const mN = parseInt($("mN").value) || 0;
+    const mL = parseInt($("mL").value) || 0;
+    const mO = parseInt($("mO").value) || 0;
+    const mS = parseInt($("mS").value) || 0;
+    nMod = mN + mL + mO + mS;
+
+    if (nMod > 0) {
+      // fator médio ponderado pela qtd de módulos em cada orientação
+      fOri = (mN*FAT.N + mL*FAT.L + mO*FAT.O + mS*FAT.S) / nMod;
+    } else {
+      fOri = 1.0;
+    }
+    kwpNec = media / (hsp * 30 * pr * (fOri || 1)); // referência do que precisaria
+
+    // monta rótulo tipo "4N + 4L + 4S"
+    const partes = [];
+    if (mN) partes.push(`${mN}N`);
+    if (mL) partes.push(`${mL}L`);
+    if (mO) partes.push(`${mO}O`);
+    if (mS) partes.push(`${mS}S`);
+    oriLabel = partes.length ? partes.join(" + ") : "Personalizado";
+    perda = Math.round((1 - fOri) * 100);
+
+    // atualiza o resumo dentro da caixa custom
+    $("customResumo").textContent = nMod > 0
+      ? `Total: ${nMod} módulos · fator médio ${fOri.toFixed(2)}`
+      : "Total: 0 módulos · fator médio —";
+  } else {
+    // modos prontos: sistema calcula a qtd de módulos
+    fOri = parseFloat(oriValor) || 1.0;
+    kwpNec = media / (hsp * 30 * pr * fOri);
+    nMod = Math.ceil(kwpNec * 1000 / modW);
+    const oriSel = $("orientacao").options[$("orientacao").selectedIndex];
+    oriLabel = oriSel.getAttribute("data-label");
+    perda = Math.round((1 - fOri) * 100);
+  }
+
   const kwpInst = nMod * modW / 1000;
-  const geracao = kwpInst * hsp * 30 * pr;
+  const geracao = kwpInst * hsp * 30 * pr * fOri;
   geracaoMedia = geracao;
 
   $("kwpNec").textContent = num(kwpNec) + " kWp";
@@ -365,6 +509,7 @@ function calcular() {
   $("nMod").textContent = nMod + " un";
   $("kwpInst").textContent = num(kwpInst) + " kWp";
   $("geracao").textContent = num(geracao, 0) + " kWh/mês";
+  $("oriDado").textContent = perda > 0 ? `${oriLabel} (−${perda}%)` : oriLabel;
 
   const inv = $("inversor").value;
   $("invLinha").classList.toggle("oculto", !inv);
@@ -392,11 +537,18 @@ document.addEventListener("change", calcular);
 
 function imprimir() {
   const cliente = $("cliente").value.trim();
-  $("fCliente").textContent = cliente ? "Cliente: " + cliente : "";
+  const tel = $("telefone").value.trim();
+  const end = $("endereco").value.trim();
+  let linhaCliente = "";
+  if (cliente) linhaCliente = "Cliente: " + cliente;
+  if (tel) linhaCliente += (linhaCliente ? " · " : "") + tel;
+  if (end) linhaCliente += (linhaCliente ? "<br>" : "") + end;
+  $("fCliente").innerHTML = linhaCliente;
   $("fData").textContent = new Date().toLocaleDateString("pt-BR", {day:"2-digit", month:"long", year:"numeric"});
   $("fMedia").textContent = $("mediaValor").textContent + " kWh/mês";
   $("fModLabel").textContent = $("modLabel").textContent;
   $("fMod").textContent = $("nMod").textContent;
+  $("fOri").textContent = $("oriDado").textContent;
   const invSel = $("inversor").value;
   $("fInvLinha").style.display = invSel ? "" : "none";
   $("fInv").textContent = invSel || "—";
@@ -426,6 +578,100 @@ function montarGrafico() {
     cont.appendChild(col);
   });
 }
+
+// ===== CRM: lista de clientes salvos no aparelho =====
+const CHAVE = "salla_clientes";
+
+function lerClientes() {
+  try { return JSON.parse(localStorage.getItem(CHAVE)) || []; }
+  catch { return []; }
+}
+function gravarClientes(lista) {
+  localStorage.setItem(CHAVE, JSON.stringify(lista));
+}
+
+function salvarCliente() {
+  const nome = $("cliente").value.trim();
+  if (!nome) { alert("Preencha ao menos o nome do cliente antes de salvar."); return; }
+  if ($("mediaValor").textContent === "0" || $("nMod").textContent === "—") {
+    alert("Preencha o consumo do cliente primeiro para gerar a proposta."); return;
+  }
+  const reg = {
+    data: new Date().toLocaleDateString("pt-BR"),
+    nome: nome,
+    telefone: $("telefone").value.trim(),
+    endereco: $("endereco").value.trim(),
+    consumo: $("mediaValor").textContent + " kWh",
+    kwp: $("kwpInst").textContent,
+    modulos: $("nMod").textContent,
+    inversor: $("inversor").value || "a definir",
+    telhado: $("oriDado").textContent,
+    valor: $("valorFinal").textContent,
+  };
+  const lista = lerClientes();
+  lista.unshift(reg); // mais recente primeiro
+  gravarClientes(lista);
+  renderTabela();
+  // limpa os campos de contato para o próximo cliente
+  $("cliente").value = ""; $("telefone").value = ""; $("endereco").value = "";
+  alert("Cliente \"" + nome + "\" salvo na lista! ✓");
+}
+
+function excluirCliente(i) {
+  const lista = lerClientes();
+  lista.splice(i, 1);
+  gravarClientes(lista);
+  renderTabela();
+}
+
+function limparTudo() {
+  if (!confirm("Apagar TODOS os clientes salvos? Essa ação não pode ser desfeita.")) return;
+  localStorage.removeItem(CHAVE);
+  renderTabela();
+}
+
+function renderTabela() {
+  const lista = lerClientes();
+  $("qtdClientes").textContent = lista.length;
+  const corpo = $("corpoTabela");
+  corpo.innerHTML = "";
+  $("listaVazia").style.display = lista.length ? "none" : "block";
+  $("tabelaClientes").style.display = lista.length ? "table" : "none";
+  lista.forEach((c, i) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML =
+      `<td>${c.data}</td><td>${c.nome}</td><td>${c.telefone||"—"}</td>` +
+      `<td>${c.endereco||"—"}</td><td>${c.consumo}</td><td>${c.kwp}</td>` +
+      `<td>${c.modulos}</td><td>${c.inversor}</td><td>${c.telhado}</td>` +
+      `<td>${c.valor}</td>` +
+      `<td><button class="del" onclick="excluirCliente(${i})" title="Excluir">×</button></td>`;
+    corpo.appendChild(tr);
+  });
+}
+
+function exportarExcel() {
+  const lista = lerClientes();
+  if (!lista.length) { alert("Nenhum cliente salvo para exportar."); return; }
+  const cab = ["Data","Cliente","Telefone","Endereco","Consumo","kWp","Modulos","Inversor","Telhado","Valor"];
+  const escapar = (t) => `"${String(t).replace(/"/g,'""')}"`;
+  const linhas = lista.map(c =>
+    [c.data,c.nome,c.telefone,c.endereco,c.consumo,c.kwp,c.modulos,c.inversor,c.telhado,c.valor].map(escapar).join(";")
+  );
+  // BOM p/ acentos abrirem certo no Excel
+  const csv = "\uFEFF" + cab.join(";") + "\n" + linhas.join("\n");
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "clientes-salla-" + new Date().toISOString().slice(0,10) + ".csv";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+// carrega a lista ao abrir
+renderTabela();
 </script>
 </body>
 </html>
