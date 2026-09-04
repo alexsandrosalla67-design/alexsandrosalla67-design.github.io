@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Simulador de Economia Solar | Salla Energy</title>
+<meta name="description" content="Descubra seu potencial de economia com energia solar em Curitiba e região. Simulação rápida e estudo completo pelo WhatsApp.">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--azul:#0d2b5e;--azul2:#1a4080;--azul3:#2563a8;--amarelo:#f5a623;--amarelo2:#ffd166;--verde:#25d366;--fundo:#f5f7fb;--texto:#101828;--muted:#667085;--borda:#e4e7ec;--branco:#fff}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Barlow',sans-serif;color:var(--texto);background:var(--fundo);line-height:1.55}a{text-decoration:none;color:inherit}.container{width:min(1120px,calc(100% - 32px));margin:auto}
+header{background:var(--azul);color:#fff;box-shadow:0 4px 18px rgba(0,0,0,.18)}.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px}.mark{width:42px;height:42px;background:var(--amarelo);color:var(--azul);display:grid;place-items:center;border-radius:10px;font-size:23px}.brand strong{font-family:'Barlow Condensed',sans-serif;font-size:22px;display:block;line-height:1}.brand span{font-size:10px;text-transform:uppercase;letter-spacing:1.6px;color:var(--amarelo2);font-weight:700}.back{font-size:14px;font-weight:700;color:rgba(255,255,255,.82)}
+.hero{background:radial-gradient(circle at 85% 25%,rgba(245,166,35,.18),transparent 26%),linear-gradient(135deg,#0a234e,#0d2b5e 55%,#1c5ea9);color:#fff;padding:74px 0 110px}.hero-inner{max-width:760px;margin:auto;text-align:center}.badge{display:inline-block;border:1px solid rgba(245,166,35,.38);background:rgba(245,166,35,.10);color:var(--amarelo2);padding:7px 13px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.5px;margin-bottom:18px}.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(44px,6vw,66px);line-height:.98;margin-bottom:18px}.hero h1 span{color:var(--amarelo)}.hero p{font-size:18px;color:rgba(255,255,255,.78);max-width:680px;margin:auto}
+.sim-wrap{margin-top:-64px;padding-bottom:70px}.card{background:#fff;border:1px solid var(--borda);border-radius:22px;box-shadow:0 24px 70px rgba(13,43,94,.16);padding:32px;max-width:780px;margin:auto}.steps{display:flex;gap:10px;justify-content:center;margin-bottom:26px}.step{display:flex;align-items:center;gap:7px;color:#98a2b3;font-size:12px;font-weight:700}.dot{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#eef2f6;color:#667085}.step.active{color:var(--azul)}.step.active .dot{background:var(--azul);color:#fff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:13px;font-weight:700;color:#344054}.field input,.field select{width:100%;border:1.5px solid var(--borda);border-radius:10px;padding:13px 14px;background:#fff;outline:none;font-size:16px}.field input:focus,.field select:focus{border-color:var(--azul3);box-shadow:0 0 0 3px rgba(37,99,168,.10)}.helper{font-size:11px;color:#98a2b3}
+.btn{width:100%;border:0;border-radius:10px;padding:14px 18px;font-size:16px;font-weight:800;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--amarelo);color:var(--azul);margin-top:20px}.btn-whats{background:var(--verde);color:#fff;margin-top:16px}.btn-secondary{background:#eef3f9;color:var(--azul);margin-top:10px}
+.result{display:none}.result.show{display:block}.result-head{text-align:center;margin-bottom:26px}.result-head .ok{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;margin:0 auto 13px;background:rgba(37,211,102,.12);color:#168a45;font-size:28px}.result-head h2{font-family:'Barlow Condensed',sans-serif;font-size:38px;color:var(--azul);line-height:1}.result-head p{color:var(--muted);margin-top:8px}.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:22px 0}.metric{border:1px solid var(--borda);background:var(--fundo);border-radius:14px;padding:20px;text-align:center}.metric small{display:block;color:var(--muted);font-size:12px;margin-bottom:5px}.metric strong{font-family:'Barlow Condensed',sans-serif;font-size:30px;color:var(--azul)}.blurbox{position:relative;border:1px dashed #cbd5e1;border-radius:15px;padding:20px;margin-top:18px;background:#fafafa;overflow:hidden}.blurrow{display:grid;grid-template-columns:1fr 1fr;gap:10px;filter:blur(5px);opacity:.55;user-select:none}.fake{height:62px;border-radius:9px;background:linear-gradient(90deg,#e5e7eb,#f3f4f6,#e5e7eb)}.lock{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;background:rgba(255,255,255,.62);backdrop-filter:blur(1px)}.lock strong{color:var(--azul);font-size:16px}.lock span{display:block;color:var(--muted);font-size:12px;margin-top:4px}.leadbox{margin-top:22px;border-top:1px solid var(--borda);padding-top:22px}.leadbox h3{color:var(--azul);font-size:19px;margin-bottom:5px}.leadbox p{color:var(--muted);font-size:13px;margin-bottom:14px}.note{margin-top:16px;font-size:11px;line-height:1.45;color:#98a2b3;text-align:center}
+.info{max-width:780px;margin:0 auto 70px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.info article{background:#fff;border:1px solid var(--borda);border-radius:14px;padding:20px}.info b{display:block;color:var(--azul);margin-bottom:5px}.info p{font-size:13px;color:var(--muted)}
+footer{background:#071a3a;color:rgba(255,255,255,.65);padding:30px 0;text-align:center;font-size:12px}
+@media(max-width:700px){.nav{min-height:66px}.brand span{display:none}.hero{padding:58px 0 96px}.hero h1{font-size:46px}.hero p{font-size:16px}.card{padding:22px}.grid,.metrics,.info{grid-template-columns:1fr}.field.full{grid-column:auto}.steps{justify-content:flex-start;overflow-x:auto}.back{font-size:12px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html"><div class="mark">⚡</div><div><strong>Salla Energy</strong><span>Engenharia Elétrica</span></div></a>
+    <a class="back" href="index.html">← Voltar ao site</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="badge">SIMULAÇÃO GRATUITA</div>
+    <h1>Descubra quanto você pode <span>economizar com energia solar</span></h1>
+    <p>Faça uma estimativa rápida em menos de 1 minuto. O dimensionamento técnico completo é preparado pela Salla Energy após a análise dos seus dados.</p>
+  </div>
+</section>
+
+<main class="container sim-wrap">
+  <section class="card">
+    <div id="formView">
+      <div class="steps"><div class="step active"><span class="dot">1</span>Consumo</div><div class="step"><span class="dot">2</span>Potencial</div><div class="step"><span class="dot">3</span>Estudo completo</div></div>
+      <form id="simForm">
+        <div class="grid">
+          <div class="field full"><label for="conta">Valor médio da conta de energia</label><input id="conta" type="number" inputmode="decimal" min="100" max="50000" step="10" placeholder="Ex.: 650" required><span class="helper">Use a média dos últimos meses, em reais.</span></div>
+          <div class="field"><label for="cidade">Cidade</label><input id="cidade" type="text" placeholder="Ex.: Curitiba" required></div>
+          <div class="field"><label for="perfil">Tipo de imóvel</label><select id="perfil" required><option value="">Selecione</option><option>Residência</option><option>Comércio</option><option>Condomínio</option><option>Indústria / empresa</option><option>Rural</option></select></div>
+          <div class="field"><label for="ligacao">Ligação elétrica</label><select id="ligacao"><option>Não sei informar</option><option>Monofásica</option><option>Bifásica</option><option>Trifásica</option></select></div>
+          <div class="field"><label for="telhado">Local para instalação</label><select id="telhado"><option>Telhado</option><option>Solo</option><option>Não sei informar</option></select></div>
+        </div>
+        <button class="btn btn-primary" type="submit">Ver meu potencial de economia →</button>
+      </form>
+    </div>
+
+    <div class="result" id="resultView" aria-live="polite">
+      <div class="steps"><div class="step"><span class="dot">1</span>Consumo</div><div class="step active"><span class="dot">2</span>Potencial</div><div class="step"><span class="dot">3</span>Estudo completo</div></div>
+      <div class="result-head"><div class="ok">✓</div><h2>Seu perfil tem potencial para energia solar</h2><p id="resultText">Com base nos dados informados, existe oportunidade relevante de redução da conta.</p></div>
+      <div class="metrics">
+        <div class="metric"><small>Economia anual potencial</small><strong id="economia">—</strong></div>
+        <div class="metric"><small>Redução estimada da conta</small><strong>até 90%</strong></div>
+      </div>
+      <div class="blurbox">
+        <div class="blurrow"><div class="fake"></div><div class="fake"></div><div class="fake"></div><div class="fake"></div></div>
+        <div class="lock"><div><strong>🔒 Dimensionamento completo</strong><span>Potência do sistema, módulos, inversor, geração e proposta são definidos após análise técnica.</span></div></div>
+      </div>
+      <div class="leadbox">
+        <h3>Receba seu estudo completo gratuitamente</h3>
+        <p>Informe seus dados para enviar a solicitação direto para a Salla Energy pelo WhatsApp.</p>
+        <div class="grid">
+          <div class="field"><label for="nome">Nome</label><input id="nome" type="text" placeholder="Seu nome" required></div>
+          <div class="field"><label for="whatsapp">WhatsApp</label><input id="whatsapp" type="tel" placeholder="(41) 99999-9999" required></div>
+        </div>
+        <button class="btn btn-whats" id="whatsBtn" type="button">Receber estudo pelo WhatsApp →</button>
+        <button class="btn btn-secondary" id="backBtn" type="button">Alterar dados da simulação</button>
+      </div>
+      <div class="note">Estimativa comercial inicial. O resultado definitivo depende do histórico de consumo, tarifa, padrão de entrada, disponibilidade de área, orientação, sombreamento, equipamentos e vistoria técnica.</div>
+    </div>
+  </section>
+</main>
+
+<section class="container info">
+  <article><b>Sem preço automático</b><p>A proposta é preparada de forma personalizada depois da análise técnica do imóvel e do consumo.</p></article>
+  <article><b>Sem dimensionamento genérico</b><p>Quantidade de módulos, inversor e configuração do sistema são definidos pela engenharia.</p></article>
+  <article><b>Atendimento direto</b><p>Você recebe a análise pelo WhatsApp e pode tirar dúvidas diretamente com a Salla Energy.</p></article>
+</section>
+
+<footer>© 2026 Salla Energy Engenharia Elétrica • São José dos Pinhais / PR</footer>
+
+<script>
+const form=document.getElementById('simForm');
+const formView=document.getElementById('formView');
+const resultView=document.getElementById('resultView');
+const economia=document.getElementById('economia');
+const resultText=document.getElementById('resultText');
+const whatsBtn=document.getElementById('whatsBtn');
+const backBtn=document.getElementById('backBtn');
+let dados={};
+const brl=v=>new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0}).format(v);
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const conta=Math.max(100,Math.min(50000,Number(document.getElementById('conta').value)||0));
+  if(!conta)return;
+  dados={conta,cidade:document.getElementById('cidade').value.trim(),perfil:document.getElementById('perfil').value,ligacao:document.getElementById('ligacao').value,telhado:document.getElementById('telhado').value};
+  const anual=conta*12;
+  const economiaEst=anual*0.82;
+  economia.textContent='até '+brl(economiaEst);
+  resultText.textContent=`Para um imóvel do tipo ${dados.perfil.toLowerCase()} em ${dados.cidade}, a energia solar pode representar uma redução importante no gasto anual com energia.`;
+  formView.style.display='none';
+  resultView.classList.add('show');
+  window.scrollTo({top:250,behavior:'smooth'});
+});
+backBtn.addEventListener('click',()=>{resultView.classList.remove('show');formView.style.display='block';window.scrollTo({top:220,behavior:'smooth'});});
+whatsBtn.addEventListener('click',()=>{
+  const nome=document.getElementById('nome').value.trim();
+  const telefone=document.getElementById('whatsapp').value.trim();
+  if(!nome||!telefone){alert('Preencha seu nome e WhatsApp para continuar.');return;}
+  const msg=`Olá! Fiz uma simulação no site da Salla Energy e gostaria de receber o estudo completo.%0A%0A*Nome:* ${encodeURIComponent(nome)}%0A*WhatsApp:* ${encodeURIComponent(telefone)}%0A*Cidade:* ${encodeURIComponent(dados.cidade)}%0A*Perfil:* ${encodeURIComponent(dados.perfil)}%0A*Conta média:* ${encodeURIComponent(brl(dados.conta))}%0A*Ligação:* ${encodeURIComponent(dados.ligacao)}%0A*Local:* ${encodeURIComponent(dados.telhado)}%0A%0AGostaria do dimensionamento e proposta.`;
+  window.open('https://wa.me/5541987774160?text='+msg,'_blank','noopener');
+});
+</script>
+</body>
+</html>
