@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Preview | Salla Energy Engenharia Elétrica</title>
+  <meta name="description" content="Preview da nova página da Salla Energy Engenharia Elétrica.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --azul:#0d2b5e;
+      --azul2:#123c78;
+      --azul3:#1f5ea8;
+      --amarelo:#f5a623;
+      --amarelo2:#ffd166;
+      --branco:#fff;
+      --fundo:#f5f7fb;
+      --texto:#101828;
+      --muted:#667085;
+      --borda:#e4e7ec;
+      --verde:#25d366;
+      --sombra:0 18px 50px rgba(13,43,94,.12);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{font-family:'Barlow',sans-serif;color:var(--texto);background:var(--branco);line-height:1.55}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    button,input,select,textarea{font:inherit}
+    .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
+
+    .preview-bar{background:#091d3f;color:#fff;text-align:center;padding:8px 16px;font-size:13px}
+    .preview-bar strong{color:var(--amarelo2)}
+
+    header{position:sticky;top:0;z-index:100;background:rgba(13,43,94,.97);backdrop-filter:blur(12px);box-shadow:0 8px 30px rgba(0,0,0,.16)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:11px;min-width:max-content}
+    .brand-mark{width:42px;height:42px;border-radius:11px;background:var(--amarelo);display:grid;place-items:center;color:var(--azul);font-size:24px;font-weight:900}
+    .brand-copy{line-height:1.02}
+    .brand-copy strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:22px;letter-spacing:.3px;color:#fff}
+    .brand-copy span{font-size:10px;text-transform:uppercase;letter-spacing:1.8px;color:var(--amarelo2);font-weight:700}
+    .nav-links{display:flex;align-items:center;gap:22px;color:rgba(255,255,255,.84);font-size:14px;font-weight:600}
+    .nav-links a{transition:.2s}
+    .nav-links a:hover{color:var(--amarelo)}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .btn{border:0;border-radius:9px;padding:12px 18px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;cursor:pointer;transition:.2s}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-yellow{background:var(--amarelo);color:var(--azul)}
+    .btn-yellow:hover{background:#ffb83f}
+    .btn-whats{background:var(--verde);color:#fff}
+    .btn-outline{border:1.5px solid rgba(255,255,255,.35);color:#fff;background:rgba(255,255,255,.04)}
+    .menu-btn{display:none;background:transparent;border:0;color:#fff;font-size:28px;cursor:pointer}
+
+    .hero{background:
+      radial-gradient(circle at 85% 30%,rgba(245,166,35,.20),transparent 28%),
+      linear-gradient(135deg,#0a234e 0%,#0d2b5e 48%,#185298 100%);color:#fff;padding:86px 0 78px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:64px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(245,166,35,.42);background:rgba(245,166,35,.12);color:var(--amarelo2);padding:7px 13px;border-radius:999px;font-size:13px;font-weight:700;margin-bottom:22px}
+    .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--amarelo);box-shadow:0 0 0 5px rgba(245,166,35,.12)}
+    .hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(46px,5.4vw,72px);line-height:.98;letter-spacing:-1px;margin-bottom:22px;max-width:760px}
+    .hero h1 span{color:var(--amarelo)}
+    .hero-lead{font-size:19px;color:rgba(255,255,255,.78);max-width:700px;margin-bottom:30px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:38px}
+    .hero-proof{display:flex;gap:24px;flex-wrap:wrap;color:rgba(255,255,255,.72);font-size:13px;font-weight:600}
+    .hero-proof span{display:flex;align-items:center;gap:7px}
+    .hero-proof b{color:var(--amarelo)}
+
+    .quick-card{background:rgba(255,255,255,.98);color:var(--texto);border-radius:22px;padding:30px;box-shadow:0 30px 90px rgba(0,0,0,.28);position:relative}
+    .quick-card:before{content:'';position:absolute;inset:0 auto auto 0;width:100%;height:5px;border-radius:22px 22px 0 0;background:linear-gradient(90deg,var(--amarelo),var(--azul3))}
+    .quick-card h2{font-family:'Barlow Condensed',sans-serif;color:var(--azul);font-size:30px;margin-bottom:6px}
+    .quick-card>p{color:var(--muted);font-size:14px;margin-bottom:22px}
+    .quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+    .field{display:flex;flex-direction:column;gap:6px}
+    .field.full{grid-column:1/-1}
+    .field label{font-size:12px;font-weight:700;color:#344054}
+    .field input,.field select,.field textarea{width:100%;border:1px solid var(--borda);border-radius:9px;padding:11px 12px;outline:none;background:#fff;color:#101828}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--azul3);box-shadow:0 0 0 3px rgba(31,94,168,.10)}
+    .field textarea{min-height:76px;resize:vertical}
+    .quick-card .btn{width:100%;padding:14px 18px}
+    .form-note{text-align:center;color:#98a2b3;font-size:11px;margin-top:10px}
+
+    .proofbar{border-bottom:1px solid var(--borda);background:#fff}
+    .proofbar-inner{min-height:76px;display:grid;grid-template-columns:repeat(4,1fr);align-items:center;gap:16px}
+    .proofitem{text-align:center;font-size:13px;color:var(--muted);border-right:1px solid var(--borda)}
+    .proofitem:last-child{border-right:0}
+    .proofitem strong{display:block;color:var(--azul);font-size:17px;margin-bottom:1px}
+
+    section{padding:84px 0}
+    .soft{background:var(--fundo)}
+    .section-head{max-width:700px;margin:0 auto 44px;text-align:center}
+    .label{display:inline-block;padding:6px 13px;border-radius:999px;background:rgba(13,43,94,.08);color:var(--azul);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.6px;margin-bottom:13px}
+    .section-head h2,.section-title{font-family:'Barlow Condensed',sans-serif;color:var(--azul);font-size:clamp(36px,4vw,48px);line-height:1.03;margin-bottom:12px}
+    .section-head p{color:var(--muted);font-size:16px}
+
+    .services{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .service{border:1px solid var(--borda);border-radius:16px;padding:24px;background:#fff;transition:.22s;min-height:230px}
+    .service:hover{transform:translateY(-5px);box-shadow:var(--sombra);border-color:rgba(31,94,168,.32)}
+    .icon{width:48px;height:48px;border-radius:12px;background:rgba(13,43,94,.07);display:grid;place-items:center;color:var(--azul);font-size:22px;margin-bottom:18px}
+    .service h3{color:var(--azul);font-size:18px;margin-bottom:8px}
+    .service p{color:var(--muted);font-size:14px}
+
+    .tools-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .tool-card{position:relative;overflow:hidden;border-radius:22px;padding:30px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--sombra)}
+    .tool-card.solar{background:linear-gradient(145deg,#0d2b5e,#1c5aa2);color:#fff}
+    .tool-card.quote{background:#fff;border:1px solid var(--borda)}
+    .tool-kicker{font-size:11px;text-transform:uppercase;letter-spacing:1.8px;font-weight:800;color:var(--amarelo)}
+    .tool-card h3{font-family:'Barlow Condensed',sans-serif;font-size:36px;line-height:1;margin:10px 0 12px}
+    .tool-card.solar p{color:rgba(255,255,255,.76)}
+    .tool-card.quote h3{color:var(--azul)}
+    .tool-card.quote p{color:var(--muted)}
+    .tool-card p{font-size:15px;max-width:510px;margin-bottom:24px}
+    .tool-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+    .tool-tags span{font-size:11px;font-weight:700;padding:6px 9px;border-radius:999px}
+    .solar .tool-tags span{background:rgba(255,255,255,.10);color:rgba(255,255,255,.84)}
+    .quote .tool-tags span{background:var(--fundo);color:#475467}
+    .tool-card .btn{width:max-content}
+
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .gallery figure{border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:#dfe5ee;position:relative}
+    .gallery img{width:100%;height:100%;object-fit:cover;transition:.35s}
+    .gallery figure:hover img{transform:scale(1.035)}
+    .gallery figcaption{position:absolute;left:12px;bottom:12px;padding:7px 10px;border-radius:8px;background:rgba(9,29,63,.78);color:#fff;font-size:12px;font-weight:700;backdrop-filter:blur(8px)}
+
+    .about{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+    .about-copy .label{margin-bottom:15px}
+    .about-copy h2{font-family:'Barlow Condensed',sans-serif;color:var(--azul);font-size:46px;line-height:1.03;margin-bottom:18px}
+    .about-copy p{color:var(--muted);margin-bottom:14px}
+    .checks{display:grid;gap:10px;margin-top:24px}
+    .checks li{list-style:none;display:flex;align-items:flex-start;gap:10px;font-weight:600;color:#344054}
+    .checks b{display:grid;place-items:center;min-width:22px;height:22px;border-radius:50%;background:rgba(37,211,102,.12);color:#168a45;font-size:12px}
+    .about-card{background:linear-gradient(145deg,#f8fafc,#eef3f9);border:1px solid var(--borda);border-radius:22px;padding:30px;display:grid;grid-template-columns:190px 1fr;gap:24px;align-items:center}
+    .portrait{width:190px;height:190px;border-radius:20px;overflow:hidden;border:4px solid #fff;box-shadow:0 12px 30px rgba(13,43,94,.18)}
+    .portrait img{width:100%;height:100%;object-fit:cover;object-position:center top}
+    .about-meta h3{font-family:'Barlow Condensed',sans-serif;color:var(--azul);font-size:29px;line-height:1.05;margin-bottom:5px}
+    .about-meta .role{color:#b76a00;font-weight:700;margin-bottom:14px}
+    .about-meta small{display:block;color:var(--muted);margin:6px 0}
+
+    .cta{padding:70px 0;background:linear-gradient(135deg,#0b2552,#123d78);color:#fff}
+    .cta-inner{display:flex;justify-content:space-between;gap:34px;align-items:center}
+    .cta h2{font-family:'Barlow Condensed',sans-serif;font-size:44px;line-height:1.02;max-width:700px}
+    .cta p{color:rgba(255,255,255,.72);margin-top:10px;max-width:620px}
+    .cta-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;min-width:max-content}
+
+    footer{background:#071a3a;color:rgba(255,255,255,.68);padding:48px 0 28px}
+    .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px;margin-bottom:34px}
+    footer h4{color:#fff;margin-bottom:12px}
+    footer p,footer a{font-size:14px}
+    footer a{display:block;margin:7px 0;transition:.2s}
+    footer a:hover{color:var(--amarelo)}
+    .copyright{border-top:1px solid rgba(255,255,255,.10);padding-top:22px;font-size:12px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+    @media(max-width:1020px){
+      .nav-links{display:none;position:absolute;top:76px;left:0;right:0;background:#0d2b5e;padding:20px 24px;flex-direction:column;align-items:flex-start;border-top:1px solid rgba(255,255,255,.1)}
+      .nav-links.open{display:flex}
+      .menu-btn{display:block}
+      .nav-actions .btn-whats{display:none}
+      .hero-grid{grid-template-columns:1fr;gap:44px}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .about{grid-template-columns:1fr}
+      .proofbar-inner{grid-template-columns:repeat(2,1fr);padding:18px 0}
+      .proofitem:nth-child(2){border-right:0}
+      .cta-inner{flex-direction:column;align-items:flex-start}
+      .cta-actions{justify-content:flex-start}
+    }
+    @media(max-width:720px){
+      .container{width:min(100% - 28px,1180px)}
+      .preview-bar{font-size:11px}
+      .nav{height:68px}
+      .brand-copy span{display:none}
+      .nav-actions .btn-yellow{display:none}
+      .nav-links{top:68px}
+      .hero{padding:64px 0 54px}
+      .hero h1{font-size:48px}
+      .hero-lead{font-size:17px}
+      .quick-card{padding:22px}
+      .quick-grid{grid-template-columns:1fr}
+      .field.full{grid-column:auto}
+      section{padding:64px 0}
+      .services,.tools-wrap,.gallery{grid-template-columns:1fr}
+      .proofbar-inner{grid-template-columns:1fr 1fr}
+      .proofitem{padding:5px;border-right:0}
+      .about-card{grid-template-columns:1fr;text-align:center}
+      .portrait{margin:0 auto}
+      .cta h2{font-size:38px}
+      .cta-actions{min-width:0;width:100%}
+      .cta-actions .btn{width:100%}
+      .footer-grid{grid-template-columns:1fr;gap:26px}
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-bar">Prévia da nova página da <strong>Salla Energy</strong> — o site atual ainda não foi substituído.</div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Salla Energy - início">
+        <div class="brand-mark">⚡</div>
+        <div class="brand-copy"><strong>Salla Energy</strong><span>Engenharia Elétrica</span></div>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#ferramentas">Ferramentas</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-yellow" href="calculadora.html">Calculadora Solar</a>
+        <a class="btn btn-whats" target="_blank" rel="noopener" href="https://wa.me/5541987774160?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Salla%20Energy%20e%20gostaria%20de%20um%20or%C3%A7amento.">WhatsApp</a>
+        <button class="menu-btn" type="button" aria-label="Abrir menu" onclick="toggleMenu()">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><i></i> Engenharia elétrica em Curitiba e região</div>
+          <h1>Soluções elétricas e solares com <span>responsabilidade técnica.</span></h1>
+          <p class="hero-lead">Projetos, instalações, energia solar, inspeções e manutenção para residências, condomínios e empresas — com engenharia aplicada do diagnóstico à entrega.</p>
+          <div class="hero-actions">
+            <a class="btn btn-yellow" href="calculadora.html">☀ Simular sistema solar</a>
+            <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/5541987774160?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Salla%20Energy%20e%20gostaria%20de%20um%20or%C3%A7amento.">Solicitar orçamento</a>
+          </div>
+          <div class="hero-proof">
+            <span><b>✓</b> CREA-PR</span>
+            <span><b>✓</b> Projetos e laudos técnicos</span>
+            <span><b>✓</b> Atendimento na Grande Curitiba</span>
+          </div>
+        </div>
+
+        <div class="quick-card">
+          <h2>Fale com a engenharia</h2>
+          <p>Preencha os dados e a mensagem será preparada para envio no WhatsApp.</p>
+          <form id="leadForm" onsubmit="sendLead(event)">
+            <div class="quick-grid">
+              <div class="field"><label for="nome">Nome</label><input id="nome" required placeholder="Seu nome"></div>
+              <div class="field"><label for="telefone">Telefone</label><input id="telefone" placeholder="(41) 99999-9999"></div>
+              <div class="field full"><label for="servico">Serviço</label>
+                <select id="servico" required>
+                  <option value="">Selecione</option>
+                  <option>Energia solar</option>
+                  <option>Projeto elétrico</option>
+                  <option>Instalação / manutenção elétrica</option>
+                  <option>SPDA / aterramento</option>
+                  <option>Termografia / inspeção</option>
+                  <option>Laudo técnico / ART</option>
+                  <option>Comissionamento fotovoltaico</option>
+                  <option>Outro</option>
+                </select>
+              </div>
+              <div class="field full"><label for="mensagem">Resumo da necessidade</label><textarea id="mensagem" placeholder="Ex.: sistema solar, manutenção de condomínio, projeto elétrico..."></textarea></div>
+            </div>
+            <button class="btn btn-whats" type="submit">Enviar pelo WhatsApp →</button>
+            <div class="form-note">Você revisa a mensagem antes de enviar.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="proofbar">
+      <div class="container proofbar-inner">
+        <div class="proofitem"><strong>10+ anos</strong>experiência no setor elétrico</div>
+        <div class="proofitem"><strong>CREA-PR</strong>responsabilidade técnica</div>
+        <div class="proofitem"><strong>Solar + Elétrica</strong>solução integrada</div>
+        <div class="proofitem"><strong>Curitiba e RMC</strong>atendimento regional</div>
+      </div>
+    </div>
+
+    <section id="servicos">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">Serviços</span>
+          <h2>Engenharia para instalar, inspecionar e manter</h2>
+          <p>Um portfólio técnico focado em segurança, desempenho, documentação e confiabilidade das instalações.</p>
+        </div>
+        <div class="services">
+          <article class="service"><div class="icon">📐</div><h3>Projetos Elétricos</h3><p>Projetos de baixa e média tensão, adequações, diagramas, memoriais e documentação técnica conforme o escopo.</p></article>
+          <article class="service"><div class="icon">☀</div><h3>Energia Solar</h3><p>Projeto, instalação, ampliação, homologação, manutenção e análise de desempenho de sistemas fotovoltaicos.</p></article>
+          <article class="service"><div class="icon">⚡</div><h3>Instalações Elétricas</h3><p>Execução e reforma de instalações residenciais, comerciais, prediais e industriais.</p></article>
+          <article class="service"><div class="icon">🛡</div><h3>SPDA e Aterramento</h3><p>Inspeção, projeto, adequação e medições em sistemas de proteção contra descargas atmosféricas e aterramento.</p></article>
+          <article class="service"><div class="icon">🌡</div><h3>Termografia</h3><p>Inspeções termográficas em painéis, conexões, equipamentos e sistemas fotovoltaicos para identificação de anomalias.</p></article>
+          <article class="service"><div class="icon">🔎</div><h3>Laudos e Inspeções</h3><p>Vistorias técnicas, diagnóstico de instalações, relatórios, pareceres e ART quando aplicável ao serviço contratado.</p></article>
+          <article class="service"><div class="icon">📈</div><h3>Comissionamento FV</h3><p>Ensaios e verificações de sistemas fotovoltaicos, incluindo inspeções, medições e documentação de comissionamento.</p></article>
+          <article class="service"><div class="icon">🔧</div><h3>Manutenção e O&M</h3><p>Manutenção preventiva e corretiva, análise de falhas, inversores, quadros, ativos elétricos e usinas solares.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="ferramentas">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">Ferramentas Salla Energy</span>
+          <h2>Do atendimento à proposta, tudo mais rápido</h2>
+          <p>As ferramentas que você já criou deixam de ficar soltas e passam a fazer parte do site.</p>
+        </div>
+        <div class="tools-wrap">
+          <article class="tool-card solar">
+            <div>
+              <div class="tool-kicker">Energia Solar</div>
+              <h3>Calculadora Solar</h3>
+              <p>Simule potência, quantidade de módulos, geração estimada, economia e retorno do investimento em poucos passos.</p>
+              <div class="tool-tags"><span>Dimensionamento</span><span>Geração</span><span>Payback</span><span>Proposta</span></div>
+            </div>
+            <a class="btn btn-yellow" href="calculadora.html">Abrir calculadora →</a>
+          </article>
+
+          <article class="tool-card quote">
+            <div>
+              <div class="tool-kicker">Comercial</div>
+              <h3>Gerador de Orçamentos</h3>
+              <p>Acesse a ferramenta de orçamento para organizar dados do cliente, escopo e apresentação comercial dos serviços.</p>
+              <div class="tool-tags"><span>Cliente</span><span>Escopo</span><span>Valores</span><span>Proposta</span></div>
+            </div>
+            <a class="btn btn-yellow" href="orcamento.html">Abrir orçamentos →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">Projetos e campo</span>
+          <h2>Experiência aplicada na prática</h2>
+          <p>Uma seleção visual de serviços e atividades técnicas executadas pela Salla Energy.</p>
+        </div>
+        <div class="gallery">
+          <figure><img src="preview3.webp" alt="Sistema fotovoltaico"><figcaption>Energia solar</figcaption></figure>
+          <figure><img src="preview5.webp" alt="Instalação fotovoltaica"><figcaption>Instalação FV</figcaption></figure>
+          <figure><img src="preview6.webp" alt="Inspeção termográfica"><figcaption>Termografia</figcaption></figure>
+          <figure><img src="preview1.webp" alt="Instalação elétrica"><figcaption>Instalações elétricas</figcaption></figure>
+          <figure><img src="preview2.webp" alt="Manutenção de equipamentos"><figcaption>Manutenção</figcaption></figure>
+          <figure style="background:linear-gradient(145deg,#0d2b5e,#185298);display:grid;place-items:center;padding:28px;text-align:center;color:#fff"><div><div style="font-size:40px;margin-bottom:10px">⚡</div><strong style="font-family:'Barlow Condensed',sans-serif;font-size:27px">Seu projeto pode ser o próximo</strong><p style="font-size:13px;color:rgba(255,255,255,.72);margin-top:8px">Converse com a Salla Energy.</p></div></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="sobre">
+      <div class="container about">
+        <div class="about-copy">
+          <span class="label">Sobre a Salla Energy</span>
+          <h2>Engenharia elétrica com visão de campo</h2>
+          <p>A Salla Energy atua com soluções de engenharia elétrica e energia solar para clientes residenciais, condomínios, comércios e empresas.</p>
+          <p>O objetivo é unir projeto, execução, inspeção e manutenção em um atendimento técnico direto, com documentação e responsabilidade profissional.</p>
+          <ul class="checks">
+            <li><b>✓</b><span>Engenheiro eletricista registrado no CREA-PR</span></li>
+            <li><b>✓</b><span>Experiência em energia solar, manutenção e projetos elétricos</span></li>
+            <li><b>✓</b><span>Atuação em campo e análise técnica de falhas</span></li>
+            <li><b>✓</b><span>Atendimento em Curitiba, São José dos Pinhais e região</span></li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <div class="portrait"><img src="Gemini_Generated_Image_2lmb7t2lmb7t2lmb.png" alt="Salla Energy Engenharia Elétrica"></div>
+          <div class="about-meta">
+            <h3>Eng. Alexsandro Salla</h3>
+            <div class="role">Engenheiro Eletricista</div>
+            <small>CREA-PR 212335/D</small>
+            <small>Engenharia elétrica e energia solar</small>
+            <small>Gestão de projetos e atividades de campo</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contato">
+      <div class="container cta-inner">
+        <div>
+          <h2>Precisa de orçamento, vistoria ou solução para um problema elétrico?</h2>
+          <p>Envie a situação pelo WhatsApp. Fotos, endereço e uma breve descrição já ajudam a direcionar o atendimento.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-yellow" target="_blank" rel="noopener" href="https://wa.me/5541987774160?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Salla%20Energy%20e%20gostaria%20de%20um%20or%C3%A7amento.">Chamar no WhatsApp</a>
+          <a class="btn btn-outline" href="tel:+5541987774160">Ligar: (41) 98777-4160</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="margin-bottom:14px"><div class="brand-mark">⚡</div><div class="brand-copy"><strong>Salla Energy</strong><span>Engenharia Elétrica</span></div></div>
+          <p>Engenharia elétrica, energia solar, inspeções e manutenção com atendimento em Curitiba e região metropolitana.</p>
+        </div>
+        <div><h4>Navegação</h4><a href="#servicos">Serviços</a><a href="#projetos">Projetos</a><a href="#ferramentas">Ferramentas</a><a href="#sobre">Sobre</a></div>
+        <div><h4>Ferramentas</h4><a href="calculadora.html">Calculadora Solar</a><a href="orcamento.html">Gerador de Orçamentos</a><a target="_blank" rel="noopener" href="https://www.instagram.com/salla_energy/">Instagram</a></div>
+      </div>
+      <div class="copyright"><span>© 2026 Salla Energy Engenharia Elétrica.</span><span>São José dos Pinhais • Paraná</span></div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(){
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+    document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+
+    function sendLead(event){
+      event.preventDefault();
+      const nome=document.getElementById('nome').value.trim();
+      const telefone=document.getElementById('telefone').value.trim();
+      const servico=document.getElementById('servico').value;
+      const mensagem=document.getElementById('mensagem').value.trim();
+      const texto=`Olá! Vim pelo site da Salla Energy.%0A%0A*Nome:* ${encodeURIComponent(nome)}%0A*Telefone:* ${encodeURIComponent(telefone||'não informado')}%0A*Serviço:* ${encodeURIComponent(servico)}%0A*Descrição:* ${encodeURIComponent(mensagem||'não informada')}`;
+      window.open(`https://wa.me/5541987774160?text=${texto}`,'_blank','noopener');
+    }
+  </script>
+</body>
+</html>
